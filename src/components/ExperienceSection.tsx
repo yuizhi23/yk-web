@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { Mic, Video, Users, Award } from 'lucide-react';
+import { Mic, Video, Users, Award, FileText } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-export const ExperienceSection = () => {
+interface ExperienceSectionProps {
+  onCompleteResumeClick: () => void;
+}
+
+export const ExperienceSection = ({ onCompleteResumeClick }: ExperienceSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('voice-over');
   const sectionRef = useRef<HTMLElement>(null);
@@ -166,6 +171,17 @@ export const ExperienceSection = () => {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Complete Resume Button */}
+          <div className="flex justify-center mt-12">
+            <Button
+              onClick={onCompleteResumeClick}
+              className="bg-accent hover:bg-accent/90 text-primary px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-3"
+            >
+              <FileText className="w-5 h-5" />
+              View Complete Resume
+            </Button>
           </div>
         </div>
       </div>

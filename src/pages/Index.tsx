@@ -15,7 +15,7 @@ const Index = () => {
       <HeroSection onResumeClick={() => setIsResumeModalOpen(true)} />
       <ProfessionalSummary />
       <EducationSection />
-      <ExperienceSection />
+      <ExperienceSection onCompleteResumeClick={() => setIsResumeModalOpen(true)} />
       <SkillsSection />
       <PortfolioSection />
       
