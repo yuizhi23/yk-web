@@ -8,35 +8,46 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Yukie's Portfolio Color System */
+    --background: 40 20% 93%; /* Paper #efede3 */
+    --foreground: 25 8% 18%; /* Asphalt #302f2c */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 20% 96%;
+    --card-foreground: 25 8% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 20% 96%;
+    --popover-foreground: 25 8% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 25 8% 18%; /* Asphalt */
+    --primary-foreground: 40 20% 93%; /* Paper */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 40 15% 88%;
+    --secondary-foreground: 25 8% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 15% 88%;
+    --muted-foreground: 25 8% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 35 25% 65%; /* Warm accent */
+    --accent-foreground: 25 8% 18%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 20% 93%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 15% 85%;
+    --input: 40 15% 85%;
+    --ring: 25 8% 18%;
 
-    --radius: 0.5rem;
+    /* Custom Portfolio Tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(25 8% 18% / 0.95), hsl(25 8% 25% / 0.85));
+    --section-gradient: linear-gradient(180deg, hsl(40 20% 96%), hsl(40 20% 93%));
+    --card-shadow: 0 8px 32px hsl(25 8% 18% / 0.1);
+    --hover-shadow: 0 12px 40px hsl(25 8% 18% / 0.15);
+    
+    /* Animation Tokens */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +111,48 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-light;
+    overflow-x: hidden;
+  }
+  
+  /* Custom Portfolio Styles */
+  .hero-text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .section-bg {
+    background: var(--section-gradient);
+  }
+  
+  .card-elegant {
+    background: hsl(var(--card));
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-elegant:hover {
+    box-shadow: var(--hover-shadow);
+    transform: translateY(-4px);
+  }
+  
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+  }
+  
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
