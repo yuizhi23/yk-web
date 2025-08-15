@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
-import heroImage1 from '@/assets/yukie-hero-1.jpg';
-import heroImage2 from '@/assets/yukie-hero-2.jpg';
-import heroImage3 from '@/assets/yukie-hero-3.jpg';
 
-const heroImages = [heroImage1, heroImage2, heroImage3];
+const heroImages = [
+  '/lovable-uploads/890f8eda-505d-4f45-a575-aafa37a5e35d.png',
+  '/lovable-uploads/285d89c5-2396-4f99-833f-4f204b571049.png', 
+  '/lovable-uploads/8a745b1c-7860-479a-8a1e-c2d53799286e.png'
+];
 
 interface HeroSectionProps {
   onResumeClick: () => void;
@@ -30,24 +31,63 @@ export const HeroSection = ({ onResumeClick }: HeroSectionProps) => {
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-          {/* Text Content */}
-          <div className="space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight">
-                <span className="hero-text-gradient">YUKIE</span>
-                <br />
-                <span className="text-primary">RAMADHANI</span>
-                <br />
-                <span className="text-primary">KIYOSHI</span>
-              </h1>
+        <div className="w-full max-w-4xl mx-auto">
+          {/* Main Content */}
+          <div className="space-y-8 animate-fade-in text-center">
+            {/* Name with Small Photos */}
+            <div className="space-y-6">
+              <div className="flex items-center justify-center gap-8 flex-wrap">
+                {/* Small Photos */}
+                <div className="flex gap-4">
+                  {heroImages.map((image, index) => (
+                    <div
+                      key={index}
+                      className="relative w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden card-elegant"
+                    >
+                      <img
+                        src={image}
+                        alt={`Yukie photo ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Name */}
+                <div className="space-y-2">
+                  <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
+                    <span className="hero-text-gradient">YUKIE</span>
+                    <br />
+                    <span className="text-primary">RAMADHANI</span>
+                    <br />
+                    <span className="text-primary">KIYOSHI</span>
+                  </h1>
+                </div>
+                
+                {/* More Small Photos */}
+                <div className="flex gap-4">
+                  {heroImages.map((image, index) => (
+                    <div
+                      key={`duplicate-${index}`}
+                      className="relative w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden card-elegant opacity-60"
+                    >
+                      <img
+                        src={image}
+                        alt={`Yukie photo ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
               <p className="text-xl lg:text-2xl text-muted-foreground font-light">
                 Informatics Student | Content Creator | Voice Over Artist
               </p>
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
                 <span>yukiekiyoshi123@gmail.com</span>
@@ -76,37 +116,6 @@ export const HeroSection = ({ onResumeClick }: HeroSectionProps) => {
             >
               Complete Resume
             </Button>
-          </div>
-
-          {/* Image Slideshow */}
-          <div className="relative">
-            <div className="relative w-full h-[600px] rounded-2xl overflow-hidden card-elegant">
-              {heroImages.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`Yukie professional photo ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              ))}
-              
-              {/* Image Indicators */}
-              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
-                {heroImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentImageIndex 
-                        ? 'bg-primary' 
-                        : 'bg-white/50 hover:bg-white/75'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
