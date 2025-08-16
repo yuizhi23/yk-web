@@ -19,6 +19,20 @@ const GallerySection = () => {
       alt: "Mahasiswa '23 of the Year Certificate",
       title: "Achievement Certificate",
       description: "Official certificate for Mahasiswa '23 of the Year"
+    },
+    {
+      id: 3,
+      src: "/lovable-uploads/4cb09e0e-aeb7-4247-aeae-ea5eb609923d.png",
+      alt: "Student Affairs Division (KMS) Team",
+      title: "KMS Division Team",
+      description: "Leading the Student Affairs Division team at HIMA IF"
+    },
+    {
+      id: 4,
+      src: "/lovable-uploads/0ad2422b-ec08-495d-9969-2bd43b325c4b.png",
+      alt: "Head of Student Affairs Division (KMS)",
+      title: "Leadership Role",
+      description: "As Head of Student Affairs Division (KMS) with deputy Raihan"
     }
   ];
 
