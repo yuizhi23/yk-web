@@ -24,9 +24,9 @@ export const HeroSection = ({ onResumeClick }: HeroSectionProps) => {
   }, []);
 
   return (
-    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-primary/5 to-accent/10">
+    <section id="hero" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-primary/5 to-accent/10">
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 py-20 min-h-screen flex items-center">
+      <div className="relative z-10 container mx-auto px-6 py-24 min-h-screen flex items-center">
         <div className="w-full max-w-7xl mx-auto">
           {/* Main Content */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -35,7 +35,7 @@ export const HeroSection = ({ onResumeClick }: HeroSectionProps) => {
               {/* Name */}
               <div className="space-y-6">
                 <div className="space-y-2">
-                  <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
+                  <h1 className="text-5xl lg:text-8xl font-bold tracking-tight">
                     <span className="hero-text-gradient">YUKIE</span>
                     <br />
                     <span className="text-primary">RAMADHANI</span>
@@ -82,7 +82,7 @@ export const HeroSection = ({ onResumeClick }: HeroSectionProps) => {
             </div>
 
             {/* Slideshow */}
-            <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+            <div className="relative w-full max-w-sm mx-auto lg:mx-0 lg:ml-auto">
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 {heroImages.map((image, index) => (
                   <div

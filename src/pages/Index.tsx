@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Navigation from '@/components/Navigation';
 import { HeroSection } from '@/components/HeroSection';
 import { ProfessionalSummary } from '@/components/ProfessionalSummary';
 import { EducationSection } from '@/components/EducationSection';
@@ -12,12 +13,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Navigation />
       <HeroSection onResumeClick={() => setIsResumeModalOpen(true)} />
-      <ProfessionalSummary />
+      <div id="about">
+        <ProfessionalSummary />
+      </div>
       <EducationSection />
-      <ExperienceSection onCompleteResumeClick={() => setIsResumeModalOpen(true)} />
+      <div id="experience">
+        <ExperienceSection onCompleteResumeClick={() => setIsResumeModalOpen(true)} />
+      </div>
       <SkillsSection />
-      <PortfolioSection />
+      <div id="portfolio">
+        <PortfolioSection />
+      </div>
       
       <ResumeModal 
         isOpen={isResumeModalOpen}
