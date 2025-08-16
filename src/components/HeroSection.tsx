@@ -25,35 +25,15 @@ export const HeroSection = ({ onResumeClick }: HeroSectionProps) => {
 
   return (
     <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-primary/5 to-accent/10">
-      {/* Parallax Background */}
-      <div className="absolute inset-0 parallax-bg opacity-20" 
-           style={{ backgroundImage: `url(${heroImages[currentImageIndex]})` }} />
-      
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20 min-h-screen flex items-center">
-        <div className="w-full max-w-4xl mx-auto">
+        <div className="w-full max-w-7xl mx-auto">
           {/* Main Content */}
-          <div className="space-y-8 animate-fade-in text-center">
-            {/* Name with Small Photos */}
-            <div className="space-y-6">
-              <div className="flex items-center justify-center gap-8 flex-wrap">
-                {/* Small Photos */}
-                <div className="flex gap-4">
-                  {heroImages.map((image, index) => (
-                    <div
-                      key={index}
-                      className="relative w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden card-elegant"
-                    >
-                      <img
-                        src={image}
-                        alt={`Yukie photo ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Name */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="space-y-8 animate-fade-in text-center lg:text-left">
+              {/* Name */}
+              <div className="space-y-6">
                 <div className="space-y-2">
                   <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
                     <span className="hero-text-gradient">YUKIE</span>
@@ -64,27 +44,10 @@ export const HeroSection = ({ onResumeClick }: HeroSectionProps) => {
                   </h1>
                 </div>
                 
-                {/* More Small Photos */}
-                <div className="flex gap-4">
-                  {heroImages.map((image, index) => (
-                    <div
-                      key={`duplicate-${index}`}
-                      className="relative w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden card-elegant opacity-60"
-                    >
-                      <img
-                        src={image}
-                        alt={`Yukie photo ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
+                <p className="text-xl lg:text-2xl text-muted-foreground font-light">
+                  Informatics Student | Content Creator | Voice Over Artist
+                </p>
               </div>
-              
-              <p className="text-xl lg:text-2xl text-muted-foreground font-light">
-                Informatics Student | Content Creator | Voice Over Artist
-              </p>
-            </div>
 
             {/* Contact Info */}
             <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
@@ -109,13 +72,49 @@ export const HeroSection = ({ onResumeClick }: HeroSectionProps) => {
               </a>
             </div>
 
-            {/* CTA Button */}
-            <Button 
-              onClick={onResumeClick}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              Complete Resume
-            </Button>
+              {/* CTA Button */}
+              <Button 
+                onClick={onResumeClick}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+              >
+                Complete Resume
+              </Button>
+            </div>
+
+            {/* Slideshow */}
+            <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                {heroImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-1000 ${
+                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Yukie photo ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+              
+              {/* Slideshow Indicators */}
+              <div className="flex justify-center mt-4 space-x-2">
+                {heroImages.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex 
+                        ? 'bg-primary w-6' 
+                        : 'bg-primary/30 hover:bg-primary/50'
+                    }`}
+                    onClick={() => setCurrentImageIndex(index)}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -8,27 +8,27 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Yukie's Portfolio Color System */
-    --background: 40 20% 93%; /* Paper #efede3 */
-    --foreground: 25 8% 18%; /* Asphalt #302f2c */
+    /* Yukie's Portfolio Color System - Asphalt & Paper */
+    --background: 42 9% 96%; /* Paper #efede3 */
+    --foreground: 18 8% 19%; /* Asphalt #302f2c */
 
-    --card: 40 20% 96%;
-    --card-foreground: 25 8% 18%;
+    --card: 42 9% 96%;
+    --card-foreground: 18 8% 19%;
 
-    --popover: 40 20% 96%;
-    --popover-foreground: 25 8% 18%;
+    --popover: 42 9% 96%;
+    --popover-foreground: 18 8% 19%;
 
-    --primary: 25 8% 18%; /* Asphalt */
-    --primary-foreground: 40 20% 93%; /* Paper */
+    --primary: 18 8% 19%; /* Asphalt */
+    --primary-foreground: 42 9% 96%; /* Paper */
 
-    --secondary: 40 15% 88%;
-    --secondary-foreground: 25 8% 18%;
+    --secondary: 42 9% 90%;
+    --secondary-foreground: 18 8% 19%;
 
-    --muted: 40 15% 88%;
-    --muted-foreground: 25 8% 35%;
+    --muted: 42 9% 90%;
+    --muted-foreground: 18 8% 45%;
 
-    --accent: 35 25% 65%; /* Warm accent */
-    --accent-foreground: 25 8% 18%;
+    --accent: 42 9% 85%; /* Light Paper accent */
+    --accent-foreground: 18 8% 19%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 40 20% 93%;
@@ -67,26 +67,26 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 18 8% 19%; /* Asphalt #302f2c */
+    --foreground: 42 9% 96%; /* Paper #efede3 */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 18 8% 19%;
+    --card-foreground: 42 9% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 18 8% 19%;
+    --popover-foreground: 42 9% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 42 9% 96%; /* Paper */
+    --primary-foreground: 18 8% 19%; /* Asphalt */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 18 8% 25%;
+    --secondary-foreground: 42 9% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 18 8% 25%;
+    --muted-foreground: 42 9% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 18 8% 30%; /* Dark Asphalt accent */
+    --accent-foreground: 42 9% 96%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -154,5 +154,21 @@ All colors MUST be HSL.
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  /* Fade In Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeInUp 0.8s ease-out;
   }
 }
