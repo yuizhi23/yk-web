@@ -82,7 +82,7 @@ export const HeroSection = ({ onResumeClick }: HeroSectionProps) => {
             </div>
 
             {/* Slideshow */}
-            <div className="relative w-full max-w-sm mx-auto lg:mx-0 lg:ml-auto">
+            <div className="relative w-full max-w-xs mx-auto lg:mx-0 lg:ml-auto">
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 {heroImages.map((image, index) => (
                   <div
