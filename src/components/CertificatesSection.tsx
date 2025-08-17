@@ -51,6 +51,56 @@ const CertificatesSection = () => {
       id: 10,
       src: '/lovable-uploads/7451ab04-cc60-4298-ae93-464d4b4ac431.png',
       alt: 'Appreciation Certificate'
+    },
+    {
+      id: 11,
+      src: '/lovable-uploads/759252c2-f64f-4d96-b3a3-be139c20060a.png',
+      alt: 'Career Preparation HRD Certificate'
+    },
+    {
+      id: 12,
+      src: '/lovable-uploads/7a1dd8de-1d46-483a-a5bf-799a4c985666.png',
+      alt: 'WordPress Certificate'
+    },
+    {
+      id: 13,
+      src: '/lovable-uploads/eecca2a2-3ff2-433c-88f1-51a75c997a22.png',
+      alt: 'Business Analysis Certificate'
+    },
+    {
+      id: 14,
+      src: '/lovable-uploads/362e1fbd-f435-4cb0-9dfe-49baf96d6ffb.png',
+      alt: 'Dicoding Certificate'
+    },
+    {
+      id: 15,
+      src: '/lovable-uploads/3332e6fe-2bc3-4c0e-8e74-70c385d45919.png',
+      alt: 'Telkom University Webinar Certificate 1'
+    },
+    {
+      id: 16,
+      src: '/lovable-uploads/88d3e7a4-926a-4148-b0b0-f38af7afd37c.png',
+      alt: 'Telkom University Webinar Certificate 2'
+    },
+    {
+      id: 17,
+      src: '/lovable-uploads/02807d40-3231-4b93-9bcd-a47006887b38.png',
+      alt: 'Telkom University Webinar Certificate 3'
+    },
+    {
+      id: 18,
+      src: '/lovable-uploads/9c9568fc-6610-4721-9230-468c55d43fcc.png',
+      alt: 'Mental Health Seminar Certificate'
+    },
+    {
+      id: 19,
+      src: '/lovable-uploads/cc0263fd-e676-4a7e-99b5-1c60aa5250f1.png',
+      alt: 'Public Speaking Certificate March'
+    },
+    {
+      id: 20,
+      src: '/lovable-uploads/a07e4206-bc14-4ac4-b32d-deeebcdf6c42.png',
+      alt: 'Public Speaking Certificate February'
     }
   ];
 
@@ -59,6 +109,12 @@ const CertificatesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-asphalt">Certificates</h2>
+          <p className="text-lg text-asphalt/80 mb-2">
+            "Education is the most powerful weapon which you can use to change the world."
+          </p>
+          <p className="text-base text-asphalt/70 italic">
+            Every certificate represents a step forward in my journey of continuous learning and growth.
+          </p>
         </div>
         
         <div className="overflow-x-auto pb-4">
