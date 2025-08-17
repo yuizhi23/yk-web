@@ -101,6 +101,36 @@ const CertificatesSection = () => {
       id: 20,
       src: '/lovable-uploads/a07e4206-bc14-4ac4-b32d-deeebcdf6c42.png',
       alt: 'Public Speaking Certificate February'
+    },
+    {
+      id: 21,
+      src: '/lovable-uploads/93c94709-446e-4848-a118-0f424c84a392.png',
+      alt: 'Korean Language Beginner Certificate'
+    },
+    {
+      id: 22,
+      src: '/lovable-uploads/e344e136-b55f-463e-9770-1618d1dea5b8.png',
+      alt: 'Anti Corruption Certificate'
+    },
+    {
+      id: 23,
+      src: '/lovable-uploads/abbc6541-8419-4e6c-83c2-9dd47c479bca.png',
+      alt: 'Anti Napza Certificate'
+    },
+    {
+      id: 24,
+      src: '/lovable-uploads/f1481f8a-3106-4f66-afb7-817da957378e.png',
+      alt: 'Anti Radicalism Certificate'
+    },
+    {
+      id: 25,
+      src: '/lovable-uploads/7d48f647-435a-46c0-a404-2c13712edb1e.png',
+      alt: 'Green Campus Certificate'
+    },
+    {
+      id: 26,
+      src: '/lovable-uploads/11ddc6ab-a069-4c20-9e97-2055596eaee0.png',
+      alt: 'Sexual Violence Prevention Certificate'
     }
   ];
 
