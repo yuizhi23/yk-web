@@ -59,18 +59,18 @@ const GallerySection = () => {
               <CardContent className="p-0">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <div className="relative overflow-hidden rounded-lg bg-white">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-48 object-contain transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-asphalt/0 group-hover:bg-asphalt/20 transition-all duration-300 flex items-center justify-center">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center p-4">
-                          <h3 className="font-bold text-lg mb-2">{image.title}</h3>
-                          <p className="text-sm">{image.description}</p>
-                        </div>
+                    <div className="cursor-pointer">
+                      <div className="overflow-hidden rounded-t-lg">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-48 object-contain transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="p-4 text-center">
+                        <h3 className="font-bold text-lg mb-2 text-asphalt">{image.title}</h3>
+                        <p className="text-sm text-asphalt/80">{image.description}</p>
                       </div>
                     </div>
                   </DialogTrigger>
