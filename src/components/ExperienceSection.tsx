@@ -30,6 +30,12 @@ export const ExperienceSection = ({ onCompleteResumeClick }: ExperienceSectionPr
 
   const voiceOverExperience = [
     {
+      company: "PT KITAANTER TEKNOLOGI INDONESIA",
+      role: "Spokesperson",
+      period: "Jul 2025",
+      description: "Serves as the official voice and representative of Kitaanter ID in public communications and media-related activities. Delivers clear, confident, and engaging spoken messages across promotional materials and brand announcements. Collaborates with the marketing and communication teams to ensure consistent tone, brand alignment, and impactful storytelling in all external communications."
+    },
+    {
       company: "PT Panca Kraft Pratama",
       role: "Voice Over Artist",
       period: "May 2025",
