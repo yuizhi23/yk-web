@@ -131,6 +131,11 @@ const CertificatesSection = () => {
       id: 26,
       src: '/lovable-uploads/11ddc6ab-a069-4c20-9e97-2055596eaee0.png',
       alt: 'Sexual Violence Prevention Certificate'
+    },
+    {
+      id: 27,
+      src: '/lovable-uploads/azure-ai-900-cert.jpg',
+      alt: 'Azure AI Fundamentals (AI-900) Certificate'
     }
   ];
 
