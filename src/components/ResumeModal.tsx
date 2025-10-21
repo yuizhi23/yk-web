@@ -69,6 +69,10 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                 <h3 className="font-semibold text-lg mb-3">🎙️ Voice Over Artist</h3>
                 <div className="space-y-4 ml-4">
                   <div>
+                    <h4 className="font-medium">PT KITAANTER TEKNOLOGI INDONESIA - Spokesperson & Content Narrator (Oct 2025) | Bandung (Remote)</h4>
+                    <p className="text-sm text-muted-foreground">Created and narrated a &quot;Day in My Life&quot; VOG (Voice-Over Guide) video showcasing the dynamic meeting culture at Kitaanter ID. Combined storytelling and authentic narration to highlight startup collaboration, innovation, and team synergy. Delivered engaging behind-the-scenes insights while maintaining a professional and relatable tone that aligns with the company&apos;s brand identity.</p>
+                  </div>
+                  <div>
                     <h4 className="font-medium">PT Panca Kraft Pratama (May 2025) | Indonesia (Hybrid)</h4>
                     <p className="text-sm text-muted-foreground">Voiced the official company profile video with clear, engaging narration that captured the brand&apos;s values and vision. Delivered voice-over with professional tone and message clarity.</p>
                   </div>

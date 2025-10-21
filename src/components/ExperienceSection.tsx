@@ -31,6 +31,12 @@ export const ExperienceSection = ({ onCompleteResumeClick }: ExperienceSectionPr
   const voiceOverExperience = [
     {
       company: "PT KITAANTER TEKNOLOGI INDONESIA",
+      role: "Spokesperson & Content Narrator",
+      period: "Oct 2025 | Bandung (Remote)",
+      description: "Created and narrated a 'Day in My Life' VOG (Voice-Over Guide) video showcasing the dynamic meeting culture at Kitaanter ID. Combined storytelling and authentic narration to highlight startup collaboration, innovation, and team synergy. Delivered engaging behind-the-scenes insights while maintaining a professional and relatable tone that aligns with the company's brand identity."
+    },
+    {
+      company: "PT KITAANTER TEKNOLOGI INDONESIA",
       role: "Spokesperson",
       period: "Jul 2025",
       description: "Serves as the official voice and representative of Kitaanter ID in public communications and media-related activities. Delivers clear, confident, and engaging spoken messages across promotional materials and brand announcements. Collaborates with the marketing and communication teams to ensure consistent tone, brand alignment, and impactful storytelling in all external communications."
