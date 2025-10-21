@@ -136,6 +136,11 @@ const CertificatesSection = () => {
       id: 27,
       src: '/lovable-uploads/azure-ai-900-cert.jpg',
       alt: 'Azure AI Fundamentals (AI-900) Certificate'
+    },
+    {
+      id: 28,
+      src: '/lovable-uploads/ai-oceans-cert.jpg',
+      alt: 'AI for Oceans Hour of Code Certificate'
     }
   ];
 
