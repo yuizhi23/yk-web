@@ -5,6 +5,7 @@ import { ProfessionalSummary } from '@/components/ProfessionalSummary';
 import { EducationSection } from '@/components/EducationSection';
 import { ExperienceSection } from '@/components/ExperienceSection';
 import { SkillsSection } from '@/components/SkillsSection';
+import { AcademicProjectsSection } from '@/components/AcademicProjectsSection';
 import { PortfolioSection } from '@/components/PortfolioSection';
 import GallerySection from '@/components/GallerySection';
 import CertificatesSection from '@/components/CertificatesSection';
@@ -26,6 +27,7 @@ const Index = () => {
         <ExperienceSection onCompleteResumeClick={() => setIsResumeModalOpen(true)} />
       </div>
       <SkillsSection />
+      <AcademicProjectsSection />
       <div id="portfolio">
         <PortfolioSection />
       </div>
