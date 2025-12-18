@@ -60,70 +60,129 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
             </div>
           </section>
 
+          {/* Academic & Project Experience */}
+          <section>
+            <h2 className="text-xl font-semibold text-primary mb-4">📚 Academic & Project Experience</h2>
+            <div className="space-y-3">
+              <div>
+                <h3 className="font-semibold">Medical Data–Driven Diabetes Prediction Using Machine Learning</h3>
+                <p className="text-sm text-muted-foreground">Developed a machine learning model to predict diabetes risk based on medical data, including data preprocessing, feature analysis, model training, and performance evaluation.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Performance Analysis of TCP vs UDP in Proxy-Based Network Systems</h3>
+                <p className="text-sm text-muted-foreground">Conducted a comparative analysis of TCP and UDP performance in a proxy-based network system, focusing on latency, throughput, and reliability.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">HydroWatch: Rainfall and River Water Level Monitoring & Prediction System for Flood Mitigation</h3>
+                <p className="text-sm text-muted-foreground">Designed a system to monitor and predict rainfall and river water levels for flood mitigation in Majalaya using data-driven approaches and predictive analysis.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Cat Detection System Using Convolutional Neural Network (CNN)</h3>
+                <p className="text-sm text-muted-foreground">Developed a cat detection system using CNN, including model training, testing, and accuracy evaluation.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Digital Forensics Analysis – Corporate Data Leakage Case Simulation</h3>
+                <p className="text-sm text-muted-foreground">Performed digital forensics analysis on a simulated corporate data leakage case by investigating digital evidence such as chat logs and flash disk images using standard forensic methodologies.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">CineMagz: User-Driven Digital Platform for Exploring Movies and Series</h3>
+                <p className="text-sm text-muted-foreground">Built a digital platform that allows users to explore movie and series content through reviews written by other users.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Daily Mood Prediction Using Sleep Quality and Stress Level (Mamdani & Sugeno FIS)</h3>
+                <p className="text-sm text-muted-foreground">Predicted daily mood based on sleep quality and stress levels using Mamdani and Sugeno Fuzzy Inference Systems.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Daily Mood Prediction Using Sleep Quality and Social Media Usage (Mamdani & Sugeno FIS)</h3>
+                <p className="text-sm text-muted-foreground">Predicted daily mood based on sleep quality and social media usage intensity using Mamdani and Sugeno Fuzzy Inference Systems.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">User Experience Analysis of Telkom University LMS</h3>
+                <p className="text-sm text-muted-foreground">Analyzed user experience of Telkom University&apos;s Learning Management System (LMS) to identify areas for improvement and optimization.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Student Task Management Software System (SAMS)</h3>
+                <p className="text-sm text-muted-foreground">Developed a software system for student task management, including tracking, reminders, and schedule management.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Valorant Game Economy Analysis: Dynamic Player Resource Management</h3>
+                <p className="text-sm text-muted-foreground">Analyzed the Valorant game economy system with dynamic algorithms for managing player resources.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Query Performance Analysis With and Without Indexing</h3>
+                <p className="text-sm text-muted-foreground">Evaluated query performance in databases with and without indexing, including execution time, resource efficiency, and impact on write operations.</p>
+              </div>
+            </div>
+          </section>
+
           {/* Professional Experience */}
           <section>
             <h2 className="text-xl font-semibold text-primary mb-4">💼 Professional Experience</h2>
-            <div className="space-y-6">
-              {/* Voice Over Experience */}
+            <div className="space-y-4">
               <div>
-                <h3 className="font-semibold text-lg mb-3">🎙️ Voice Over Artist</h3>
-                <div className="space-y-4 ml-4">
-                  <div>
-                    <h4 className="font-medium">PT KITAANTER TEKNOLOGI INDONESIA - Spokesperson & Content Narrator (Oct 2025) | Bandung (Remote)</h4>
-                    <p className="text-sm text-muted-foreground">Created and narrated a &quot;Day in My Life&quot; VOG (Voice-Over Guide) video showcasing the dynamic meeting culture at Kitaanter ID. Combined storytelling and authentic narration to highlight startup collaboration, innovation, and team synergy. Delivered engaging behind-the-scenes insights while maintaining a professional and relatable tone that aligns with the company&apos;s brand identity.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">PT Panca Kraft Pratama (May 2025) | Indonesia (Hybrid)</h4>
-                    <p className="text-sm text-muted-foreground">Voiced the official company profile video with clear, engaging narration that captured the brand&apos;s values and vision. Delivered voice-over with professional tone and message clarity.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">FREZHCHICK (Larislokal) (Feb 2025) | Indonesia (Hybrid)</h4>
-                    <p className="text-sm text-muted-foreground">Lent voice to Tokopedia x Frezhchick&apos;s Ramadhan campaign. Created a warm, human-centered audio presence aligned with the festive tone.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">ERA Infinity (Mar 2025) | Remote (Indonesia)</h4>
-                    <p className="text-sm text-muted-foreground">Voice Over Talent & Scriptwriter - Wrote and narrated engaging real estate promos that bring property listings to life. Helped humanize listings and improve digital engagement.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">JAGOTI LMS (Oct 2024) | Remote</h4>
-                    <p className="text-sm text-muted-foreground">Narrated K3 training, customer service, and communication skill modules for LMS platform. Balanced clarity, tone, and warmth in e-learning voice-overs.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Belawa Phone (Mar 2024) | Indonesia (Hybrid)</h4>
-                    <p className="text-sm text-muted-foreground">Joined as freelance voice-over talent, narrating product messages with clarity and character. Brought fresh tone to tech-forward content.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Freelancer.com (Nov 2023) | Remote</h4>
-                    <p className="text-sm text-muted-foreground">Worked on a variety of projects, from voice acting to creative writing and content editing. Built early client base and polished voice-over delivery.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Fastwork.co (Jun 2024 – Oct 2024) | Remote</h4>
-                    <p className="text-sm text-muted-foreground">Handled commissioned voice-over projects ranging from character dubbing to commercial delivery.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Children&apos;s Animation Project (Jun 2025) | Indonesia (Remote)</h4>
-                    <p className="text-sm text-muted-foreground">Provided five distinct character voices for a children&apos;s animation video. Brought energy, playfulness, and clarity across diverse roles tailored for young audiences.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">KitaAnterID Spokesperson (Jul 2025) | Indonesia (Remote)</h4>
-                    <p className="text-sm text-muted-foreground">Served as the public voice and representative for Kitaanter ID across various media formats. Delivered clear, engaging, and purpose-driven communication to amplify brand values, build audience trust, and strengthen the platform&apos;s presence.</p>
-                  </div>
-                </div>
+                <h3 className="font-semibold">🎙️ Spokesperson & Content Narrator — PT KITAANTER TEKNOLOGI INDONESIA</h3>
+                <p className="text-xs text-muted-foreground/70">Oct 2025 | Indonesia (Remote)</p>
+                <p className="text-sm text-muted-foreground">Created and narrated a &quot;Day in My Life&quot; VOG (Voice-Over Guide) video showcasing the dynamic meeting culture at Kitaanter ID. Combined storytelling and authentic narration to highlight startup collaboration, innovation, and team synergy. Delivered engaging behind-the-scenes insights while maintaining a professional and relatable tone that aligns with the company&apos;s brand identity.</p>
               </div>
-
-              {/* Content Creation */}
               <div>
-                <h3 className="font-semibold text-lg mb-3">🎥 Content Creator & Marketing</h3>
-                <div className="space-y-3 ml-4">
-                  <div>
-                    <h4 className="font-medium">HelPhin Indonesia - Content Creator & Marketing Specialist (Oct 2024) | Hybrid</h4>
-                    <p className="text-sm text-muted-foreground">Created and starred in promotional/educational video content. Developed bold, youth-friendly campaigns to elevate HelPhin&apos;s platform and brand identity.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">HelPhin.id - Content Creator (Oct 2024) | Hybrid</h4>
-                    <p className="text-sm text-muted-foreground">Produced creative, bold, and relatable content to communicate HelPhin&apos;s vision. Engaged users through storytelling and visual branding.</p>
-                  </div>
-                </div>
+                <h3 className="font-semibold">🎙️ Spokesperson — PT KITAANTER TEKNOLOGI INDONESIA</h3>
+                <p className="text-xs text-muted-foreground/70">Jul 2025 | Indonesia (Hybrid)</p>
+                <p className="text-sm text-muted-foreground">Serves as the official voice and representative of Kitaanter ID in public communications and media-related activities. Delivers clear, confident, and engaging spoken messages across promotional materials and brand announcements. Collaborates with the marketing and communication teams to ensure consistent tone, brand alignment, and impactful storytelling in all external communications.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🎙️ Voice Over Artist — HANA ACADEMY</h3>
+                <p className="text-xs text-muted-foreground/70">Nov 2025 | Indonesia (Remote)</p>
+                <p className="text-sm text-muted-foreground">Voiced the promotional Christmas holiday course discount, delivering an engaging and energetic narration that highlighted the festive theme and clearly communicated the offer to attract new learners.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🎙️ Voice Over Artist — PT Panca Kraft Pratama</h3>
+                <p className="text-xs text-muted-foreground/70">May 2025 | Indonesia (Hybrid)</p>
+                <p className="text-sm text-muted-foreground">Voiced the official company profile video with clear, engaging narration that captured the brand&apos;s values and vision. Delivered voice-over with professional tone and message clarity.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🎙️ Voice Over Artist — FREZHCHICK (Larislokal)</h3>
+                <p className="text-xs text-muted-foreground/70">Feb 2025 | Indonesia (Hybrid)</p>
+                <p className="text-sm text-muted-foreground">Lent voice to Tokopedia x Frezhchick&apos;s Ramadhan campaign. Created a warm, human-centered audio presence aligned with the festive tone.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🎙️ Voice Over Talent & Scriptwriter — ERA Infinity</h3>
+                <p className="text-xs text-muted-foreground/70">Mar 2025 | Remote (Indonesia)</p>
+                <p className="text-sm text-muted-foreground">Wrote and narrated engaging real estate promos that bring property listings to life. Helped humanize listings and improve digital engagement.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🎙️ Voice Over Artist — JAGOTI LMS</h3>
+                <p className="text-xs text-muted-foreground/70">Oct 2024 | Remote</p>
+                <p className="text-sm text-muted-foreground">Narrated K3 training, customer service, and communication skill modules for LMS platform. Balanced clarity, tone, and warmth in e-learning voice-overs.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🎥 Content Creator & Marketing Specialist — HelPhin Indonesia</h3>
+                <p className="text-xs text-muted-foreground/70">Oct 2024 | Hybrid</p>
+                <p className="text-sm text-muted-foreground">Created and starred in promotional/educational video content. Developed bold, youth-friendly campaigns to elevate HelPhin&apos;s platform and brand identity.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🖋️ Content Creator — HelPhin.id</h3>
+                <p className="text-xs text-muted-foreground/70">Oct 2024 | Hybrid</p>
+                <p className="text-sm text-muted-foreground">Produced creative, bold, and relatable content to communicate HelPhin&apos;s vision. Engaged users through storytelling and visual branding.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🎙️ Voice Over Artist — Belawa Phone</h3>
+                <p className="text-xs text-muted-foreground/70">Mar 2024 | Indonesia (Hybrid)</p>
+                <p className="text-sm text-muted-foreground">Joined as freelance voice-over talent, narrating product messages with clarity and character. Brought fresh tone to tech-forward content.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🧑‍🎤 Voice Over Artist — Freelancer.com</h3>
+                <p className="text-xs text-muted-foreground/70">Nov 2023 | Remote</p>
+                <p className="text-sm text-muted-foreground">Worked on a variety of projects, from voice acting to creative writing and content editing. Built early client base and polished voice-over delivery.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🎙️ Voice Over Artist — Fastwork.co</h3>
+                <p className="text-xs text-muted-foreground/70">Jun 2024 – Oct 2024 | Remote</p>
+                <p className="text-sm text-muted-foreground">Handled commissioned voice-over projects ranging from character dubbing to commercial delivery.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold">🎙️ Voice Over Artist — Children&apos;s Animation Project</h3>
+                <p className="text-xs text-muted-foreground/70">Jun 2025 | Indonesia (Remote)</p>
+                <p className="text-sm text-muted-foreground">Provided five distinct character voices for a children&apos;s animation video. Brought energy, playfulness, and clarity across diverse roles tailored for young audiences.</p>
               </div>
             </div>
           </section>
@@ -133,39 +192,48 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
             <h2 className="text-xl font-semibold text-primary mb-4">🧩 Organizational & Event Roles</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="font-semibold">🎪 Event Coordinator — Hello World 2025 (May – Sep 2025) | Bandung</h3>
+                <h3 className="font-semibold">🎪 Event Coordinator — Hello World 2025</h3>
+                <p className="text-xs text-muted-foreground/70">May – Sep 2025 | Bandung (On-site)</p>
                 <p className="text-sm text-muted-foreground">Served as the Event Coordinator for Hello World 2025, a flagship program under the Student Affairs Division (KMS) aimed at welcoming new Informatics students. Oversaw the entire execution of the event, from planning and concept development to cross-team coordination and on-the-day operations.</p>
               </div>
               <div>
-                <h3 className="font-semibold">📢 Public Relations Committee Leader — Hello World 2024 (Jul – Sep 2024)</h3>
+                <h3 className="font-semibold">📢 Public Relations Committee Leader — Hello World 2024</h3>
+                <p className="text-xs text-muted-foreground/70">Jul – Sep 2024 | Bandung (On-site)</p>
                 <p className="text-sm text-muted-foreground">Led communication, content strategy, and media outreach for a major welcoming event for Informatics students. Ensured high visibility and impactful messaging.</p>
               </div>
               <div>
-                <h3 className="font-semibold">📢 Public Relations Committee Leader — CARNIVAL 2025 (May 2025)</h3>
+                <h3 className="font-semibold">📢 Public Relations Committee Leader — CARNIVAL 2025</h3>
+                <p className="text-xs text-muted-foreground/70">May 2025 | Bandung (On-site)</p>
                 <p className="text-sm text-muted-foreground">Led the Public Relations division for CARNIVAL 2025, an appreciation and celebration event for Informatics graduates, commonly known as &quot;Arak-arakan.&quot; Crafted messaging strategies, supervised social media campaigns, and ensured strong visibility for this flagship event by HIMA IF.</p>
               </div>
               <div>
-                <h3 className="font-semibold">📢 Public Relations Committee Leader — CARNIVAL 2024 (Nov 2024 – Dec 2024)</h3>
+                <h3 className="font-semibold">📢 Public Relations Committee Leader — CARNIVAL 2024</h3>
+                <p className="text-xs text-muted-foreground/70">Nov 2024 – Dec 2024 | Bandung (On-site)</p>
                 <p className="text-sm text-muted-foreground">Crafted communication strategies to celebrate Informatics graduates. Built event visibility through digital content and storytelling.</p>
               </div>
               <div>
-                <h3 className="font-semibold">📢 Public Relations Committee Staff — Viva La Fia 2025 (Jul 2025)</h3>
+                <h3 className="font-semibold">📢 Public Relations Committee Staff — Viva La Fia 2025</h3>
+                <p className="text-xs text-muted-foreground/70">Jul 2025 | Bandung (On-site)</p>
                 <p className="text-sm text-muted-foreground">Contributed to the public relations strategy of the event. Supported digital communications, content creation, and media coordination.</p>
               </div>
               <div>
-                <h3 className="font-semibold">📢 Public Relations Committee Staff — Viva La Fia 2024 (Aug – Oct 2024)</h3>
+                <h3 className="font-semibold">📢 Public Relations Committee Staff — Viva La Fia 2024</h3>
+                <p className="text-xs text-muted-foreground/70">Aug – Oct 2024 | Bandung</p>
                 <p className="text-sm text-muted-foreground">Helped shape the event&apos;s digital presence through public relations strategy and creative media posts.</p>
               </div>
               <div>
-                <h3 className="font-semibold">📦 Logistics Staff — Anniv Insight HIMA IF (Nov – Dec 2024)</h3>
+                <h3 className="font-semibold">📦 Logistics Staff — Anniv Insight HIMA IF</h3>
+                <p className="text-xs text-muted-foreground/70">Nov – Dec 2024 | Bandung</p>
                 <p className="text-sm text-muted-foreground">Managed event logistics and materials for HIMA IF&apos;s anniversary celebration. Ensured readiness and coordination of key needs.</p>
               </div>
               <div>
-                <h3 className="font-semibold">🎪 Event Staff & Master of Ceremony — One Fine Day 2024 (BPH HIMA IF) (Dec 2024 – Jan 2025)</h3>
+                <h3 className="font-semibold">🎪 Event Staff & Master of Ceremony — One Fine Day 2024 (BPH HIMA IF)</h3>
+                <p className="text-xs text-muted-foreground/70">Dec 2024 – Jan 2025 | Bandung</p>
                 <p className="text-sm text-muted-foreground">Contributed to event planning and served as Master of Ceremony. Strengthened public speaking and crowd engagement in a creative setting.</p>
               </div>
               <div>
-                <h3 className="font-semibold">🎮 Managerial Intern (Valorant Division) — YOUNGERS (FIA) (Oct 2024 – Present)</h3>
+                <h3 className="font-semibold">🎮 Managerial Intern (Valorant Division) — YOUNGERS (FIA)</h3>
+                <p className="text-xs text-muted-foreground/70">Oct 2024 – Present | On-site</p>
                 <p className="text-sm text-muted-foreground">Supported event and team operations in the e-sports sub-division. Assisted with documentation, strategy, and coordination.</p>
               </div>
             </div>
@@ -174,22 +242,26 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
           {/* Leadership & Recognition */}
           <section>
             <h2 className="text-xl font-semibold text-primary mb-4">🧠 Leadership & Recognition</h2>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div>
-                <h3 className="font-semibold">🧭 Head of Student Affairs Division (KMS) — HIMA S1 Informatika (Mar 2025 – Present)</h3>
-                <p className="text-muted-foreground">Leads division activities, initiatives, and member development. Serves as a communication bridge between students and academic leaders.</p>
+                <h3 className="font-semibold">🧭 Head of Student Affairs Division (KMS) — HIMA S1 Informatika</h3>
+                <p className="text-xs text-muted-foreground/70">Mar 2025 – Present | Bandung</p>
+                <p className="text-sm text-muted-foreground">Leads division activities, initiatives, and member development. Serves as a communication bridge between students and academic leaders.</p>
               </div>
               <div>
-                <h3 className="font-semibold">🌟 Mahasiswa of The Year 2023 — HIMA S1 Informatika (Dec 2024 – Present)</h3>
-                <p className="text-muted-foreground">Awarded for outstanding contributions to the community and organization. Recognized at Insight & Anniv HIMA IF 2024.</p>
+                <h3 className="font-semibold">🌟 Mahasiswa of The Year 2023 — HIMA S1 Informatika</h3>
+                <p className="text-xs text-muted-foreground/70">Dec 2024 – Present | Bandung</p>
+                <p className="text-sm text-muted-foreground">Awarded for outstanding contributions to the community and organization. Recognized at Insight & Anniv HIMA IF 2024.</p>
               </div>
               <div>
-                <h3 className="font-semibold">🌱 Junior Staff (KMS Division) — BPH HIMAIF (Oct 2024 – Present)</h3>
-                <p className="text-muted-foreground">Contributed to student support initiatives and communication platforms. Worked closely with team to build inclusive student culture.</p>
+                <h3 className="font-semibold">🌱 Junior Staff (KMS Division) — BPH HIMAIF</h3>
+                <p className="text-xs text-muted-foreground/70">Oct 2024 – Present | Bandung</p>
+                <p className="text-sm text-muted-foreground">Contributed to student support initiatives and communication platforms. Worked closely with team to build inclusive student culture.</p>
               </div>
               <div>
-                <h3 className="font-semibold">🩺 Vice President — PMR SMAN 12 Bekasi (2021 – 2022)</h3>
-                <p className="text-muted-foreground">Led youth health campaigns and student outreach efforts. Supported internal coordination and external representation.</p>
+                <h3 className="font-semibold">🩺 Vice President — PMR SMAN 12 Bekasi</h3>
+                <p className="text-xs text-muted-foreground/70">2021 – 2022 | Bekasi</p>
+                <p className="text-sm text-muted-foreground">Led youth health campaigns and student outreach efforts. Supported internal coordination and external representation.</p>
               </div>
             </div>
           </section>
@@ -241,7 +313,7 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
 
           {/* Languages */}
           <section>
-            <h2 className="text-xl font-semibold text-primary mb-4">Languages</h2>
+            <h2 className="text-xl font-semibold text-primary mb-4">🌐 Languages</h2>
             <div className="text-muted-foreground">
               • English (Fluent) • Indonesian (Native)
             </div>
@@ -254,6 +326,7 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
               <div>• Kaderisasi FORTRAN 2024 (Nov 2024)</div>
               <div>• Lead Informatics 2024 Awarding (Dec 2024)</div>
               <div>• Mahasiswa &apos;23 Of The Year (Dec 2024)</div>
+              <div>• Mahasiswa &apos;23 Of The Year (Dec 2025)</div>
               <div>• Hello World 2024 Participant (Feb 2025)</div>
               <div>• Staff Muda Divisi Kemahasiswaan (Feb 2025)</div>
             </div>
