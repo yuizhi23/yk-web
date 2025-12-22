@@ -30,9 +30,9 @@ const GallerySection = () => {
     {
       id: 4,
       src: "/lovable-uploads/70862c5f-9da6-48c4-afaa-e9fce549f37f.png",
-      alt: "Mahasiswa '23 of the Year Certificate",
-      title: "Achievement Certificate",
-      description: "Official certificate for Mahasiswa '23 of the Year"
+      alt: "Mahasiswa '23 of the Year Award Plaque 2024",
+      title: "Award Plaque 2024",
+      description: "Official plaque for Mahasiswa '23 of the Year"
     },
     {
       id: 5,
