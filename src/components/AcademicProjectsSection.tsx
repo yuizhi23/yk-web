@@ -113,6 +113,22 @@ export const AcademicProjectsSection = () => {
               );
             })}
           </div>
+
+          {/* QR Code Section */}
+          <div className={`mt-12 flex flex-col items-center transition-all duration-1000 delay-500 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
+            <div className="card-elegant p-6 rounded-xl text-center">
+              <img 
+                src="/lovable-uploads/projects-qr.png" 
+                alt="Projects QR Code" 
+                className="w-40 h-40 mx-auto mb-4"
+              />
+              <p className="text-muted-foreground text-sm">
+                Scan to view full project details
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
