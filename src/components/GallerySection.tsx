@@ -9,15 +9,15 @@ const GallerySection = () => {
     {
       id: 1,
       src: "/lovable-uploads/mahasiswa-of-year-2025-ceremony.jpg",
-      alt: "Mahasiswa '23 of the Year 2025 Award Ceremony",
-      title: "Mahasiswa '23 of The Year 2025",
+      alt: "Mahasiswa '23 of the Year Award Ceremony",
+      title: "Mahasiswa '23 of The Year",
       description: "Receiving the award at the ceremony - December 2025"
     },
     {
       id: 2,
       src: "/lovable-uploads/mahasiswa-of-year-2025-plakat.jpg",
-      alt: "Plakat Penghargaan Mahasiswa '23 of The Year 2025",
-      title: "Plakat Penghargaan 2025",
+      alt: "Award Plaque Mahasiswa '23 of The Year",
+      title: "Award Plaque",
       description: "Official plaque awarded on 21 December 2025"
     },
     {
