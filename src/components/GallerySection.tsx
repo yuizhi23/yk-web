@@ -8,27 +8,41 @@ const GallerySection = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/lovable-uploads/19c957bb-cf51-4082-ba58-9a5ce7b8476c.png",
-      alt: "Mahasiswa '23 of the Year Award Ceremony",
-      title: "Award Recognition",
-      description: "Receiving the Mahasiswa '23 of the Year award"
+      src: "/lovable-uploads/mahasiswa-of-year-2025-ceremony.jpg",
+      alt: "Mahasiswa '23 of the Year 2025 Award Ceremony",
+      title: "Mahasiswa '23 of The Year 2025",
+      description: "Receiving the award at the ceremony - December 2025"
     },
     {
       id: 2,
+      src: "/lovable-uploads/mahasiswa-of-year-2025-plakat.jpg",
+      alt: "Plakat Penghargaan Mahasiswa '23 of The Year 2025",
+      title: "Plakat Penghargaan 2025",
+      description: "Official plaque awarded on 21 December 2025"
+    },
+    {
+      id: 3,
+      src: "/lovable-uploads/19c957bb-cf51-4082-ba58-9a5ce7b8476c.png",
+      alt: "Mahasiswa '23 of the Year Award Ceremony",
+      title: "Award Recognition 2024",
+      description: "Receiving the Mahasiswa '23 of the Year award"
+    },
+    {
+      id: 4,
       src: "/lovable-uploads/70862c5f-9da6-48c4-afaa-e9fce549f37f.png",
       alt: "Mahasiswa '23 of the Year Certificate",
       title: "Achievement Certificate",
       description: "Official certificate for Mahasiswa '23 of the Year"
     },
     {
-      id: 3,
+      id: 5,
       src: "/lovable-uploads/4cb09e0e-aeb7-4247-aeae-ea5eb609923d.png",
       alt: "Student Affairs Division (KMS) Team",
       title: "KMS Division Team",
       description: "Leading the Student Affairs Division team at HIMA IF"
     },
     {
-      id: 4,
+      id: 6,
       src: "/lovable-uploads/0ad2422b-ec08-495d-9969-2bd43b325c4b.png",
       alt: "Head of Student Affairs Division (KMS)",
       title: "Leadership Role",
