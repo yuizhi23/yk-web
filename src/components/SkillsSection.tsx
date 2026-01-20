@@ -31,11 +31,11 @@ export const SkillsSection = () => {
   ];
 
   const softSkills = [
-    { name: 'Public Relations', level: 95, icon: MessageSquare },
-    { name: 'Leadership', level: 90, icon: Users },
-    { name: 'Communication', level: 95, icon: MessageSquare },
-    { name: 'Teamwork', level: 90, icon: Users },
-    { name: 'Problem-Solving', level: 85, icon: Code }
+    { name: 'Public Relations', level: 98, icon: MessageSquare },
+    { name: 'Leadership', level: 95, icon: Users },
+    { name: 'Communication', level: 98, icon: MessageSquare },
+    { name: 'Teamwork', level: 95, icon: Users },
+    { name: 'Problem-Solving', level: 92, icon: Code }
   ];
 
   const languages = [
