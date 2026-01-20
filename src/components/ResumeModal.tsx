@@ -155,6 +155,11 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                 <p className="text-sm text-muted-foreground">Narrated K3 training, customer service, and communication skill modules for LMS platform. Balanced clarity, tone, and warmth in e-learning voice-overs.</p>
               </div>
               <div>
+                <h3 className="font-semibold">🎥 Creative Talent (Content Creator, Video Editor & Scriptwriter) — bdgfolk</h3>
+                <p className="text-xs text-muted-foreground/70">Jan 2026 | Indonesia (Hybrid)</p>
+                <p className="text-sm text-muted-foreground">Contributes as a creative talent for bdgfolk, handling content creation, video editing, and scriptwriting. Crafts engaging visual narratives and compelling scripts that resonate with the audience while maintaining brand consistency and creative excellence.</p>
+              </div>
+              <div>
                 <h3 className="font-semibold">🎥 Content Creator & Marketing Specialist — HelPhin Indonesia</h3>
                 <p className="text-xs text-muted-foreground/70">Oct 2024 | Hybrid</p>
                 <p className="text-sm text-muted-foreground">Created and starred in promotional/educational video content. Developed bold, youth-friendly campaigns to elevate HelPhin&apos;s platform and brand identity.</p>

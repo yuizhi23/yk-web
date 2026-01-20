@@ -69,6 +69,12 @@ export const ExperienceSection = ({ onCompleteResumeClick }: ExperienceSectionPr
 
   const contentCreationExperience = [
     {
+      company: "bdgfolk",
+      role: "Creative Talent (Content Creator, Video Editor & Scriptwriter)",
+      period: "Jan 2026 | Indonesia (Hybrid)",
+      description: "Contributes as a creative talent for bdgfolk, handling content creation, video editing, and scriptwriting. Crafts engaging visual narratives and compelling scripts that resonate with the audience while maintaining brand consistency and creative excellence."
+    },
+    {
       company: "HelPhin Indonesia",
       role: "Content Creator & Marketing Specialist",
       period: "Oct 2024",
