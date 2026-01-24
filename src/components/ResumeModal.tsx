@@ -140,6 +140,11 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                 <p className="text-sm text-muted-foreground">Voiced the official company profile video with clear, engaging narration that captured the brand&apos;s values and vision. Delivered voice-over with professional tone and message clarity.</p>
               </div>
               <div>
+                <h3 className="font-semibold">🎙️ Voice Over Artist — Odesa Indonesia</h3>
+                <p className="text-xs text-muted-foreground/70">Jan 2026 | Indonesia (Remote)</p>
+                <p className="text-sm text-muted-foreground">Provides professional voice over services for various projects and campaigns at Odesa Indonesia, delivering high-quality vocal performances for diverse media content.</p>
+              </div>
+              <div>
                 <h3 className="font-semibold">🎙️ Voice Over Artist — FREZHCHICK (Larislokal)</h3>
                 <p className="text-xs text-muted-foreground/70">Feb 2025 | Indonesia (Hybrid)</p>
                 <p className="text-sm text-muted-foreground">Lent voice to Tokopedia x Frezhchick&apos;s Ramadhan campaign. Created a warm, human-centered audio presence aligned with the festive tone.</p>

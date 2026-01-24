@@ -30,6 +30,12 @@ export const ExperienceSection = ({ onCompleteResumeClick }: ExperienceSectionPr
 
   const voiceOverExperience = [
     {
+      company: "Odesa Indonesia",
+      role: "Voice Over Artist",
+      period: "Jan 2026 | Indonesia (Remote)",
+      description: "Provides professional voice over services for various projects and campaigns at Odesa Indonesia, delivering high-quality vocal performances for diverse media content."
+    },
+    {
       company: "PT KITAANTER TEKNOLOGI INDONESIA",
       role: "Spokesperson & Content Narrator",
       period: "Oct 2025 | Bandung (Remote)",
