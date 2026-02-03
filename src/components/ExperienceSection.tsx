@@ -30,6 +30,12 @@ export const ExperienceSection = ({ onCompleteResumeClick }: ExperienceSectionPr
 
   const voiceOverExperience = [
     {
+      company: "AyPay Mitra",
+      role: "Voice Over Artist (App Notification)",
+      period: "Feb 2026 | Indonesia (Remote)",
+      description: "Recorded professional voice-over for app notification sounds and audio prompts, delivering clear and engaging audio that enhances user experience within the AyPay Mitra mobile application."
+    },
+    {
       company: "Odesa Indonesia",
       role: "Voice Over Artist",
       period: "Jan 2026 | Indonesia (Remote)",

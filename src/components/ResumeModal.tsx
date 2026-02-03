@@ -140,6 +140,11 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                 <p className="text-sm text-muted-foreground">Voiced the official company profile video with clear, engaging narration that captured the brand&apos;s values and vision. Delivered voice-over with professional tone and message clarity.</p>
               </div>
               <div>
+                <h3 className="font-semibold">🎙️ Voice Over Artist (App Notification) — AyPay Mitra</h3>
+                <p className="text-xs text-muted-foreground/70">Feb 2026 | Indonesia (Remote)</p>
+                <p className="text-sm text-muted-foreground">Recorded professional voice-over for app notification sounds and audio prompts, delivering clear and engaging audio that enhances user experience within the AyPay Mitra mobile application.</p>
+              </div>
+              <div>
                 <h3 className="font-semibold">🎙️ Voice Over Artist — Odesa Indonesia</h3>
                 <p className="text-xs text-muted-foreground/70">Jan 2026 | Indonesia (Remote)</p>
                 <p className="text-sm text-muted-foreground">Provides professional voice over services for various projects and campaigns at Odesa Indonesia, delivering high-quality vocal performances for diverse media content.</p>
