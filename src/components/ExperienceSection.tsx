@@ -30,6 +30,12 @@ export const ExperienceSection = ({ onCompleteResumeClick }: ExperienceSectionPr
 
   const voiceOverExperience = [
     {
+      company: "TRAVL",
+      role: "Voice Over & Talent",
+      period: "Jan 2026 | Indonesia (Remote)",
+      description: "Provided professional voice-over and talent services for TRAVL, delivering engaging and dynamic vocal performances for travel-related content and promotional materials."
+    },
+    {
       company: "AyPay Mitra",
       role: "Voice Over Artist (App Notification)",
       period: "Feb 2026 | Indonesia (Remote)",
