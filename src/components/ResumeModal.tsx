@@ -65,6 +65,10 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
             <h2 className="text-xl font-semibold text-primary mb-4">📚 Academic & Project Experience</h2>
             <div className="space-y-3">
               <div>
+                <h3 className="font-semibold">Femina Care: A Mobile App for Women's Health Awareness & Private Consultation</h3>
+                <p className="text-sm text-muted-foreground">Developed a mobile application focused on women's health awareness, providing educational content and private consultation features to empower women in managing their health.</p>
+              </div>
+              <div>
                 <h3 className="font-semibold">Medical Data–Driven Diabetes Prediction Using Machine Learning</h3>
                 <p className="text-sm text-muted-foreground">Developed a machine learning model to predict diabetes risk based on medical data, including data preprocessing, feature analysis, model training, and performance evaluation.</p>
               </div>
