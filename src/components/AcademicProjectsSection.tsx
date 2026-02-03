@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { GraduationCap, Brain, Network, Droplets, Cat, Shield, Film, Heart, Monitor, Gamepad2, Database } from 'lucide-react';
+import { GraduationCap, Brain, Network, Droplets, Cat, Shield, Film, Heart, Monitor, Gamepad2, Database, Smartphone } from 'lucide-react';
 
 const projects = [
+  {
+    title: "Femina Care: A Mobile App for Women's Health Awareness & Private Consultation",
+    icon: Smartphone
+  },
   {
     title: "Medical Data–Driven Diabetes Prediction Using Machine Learning",
     icon: Brain
