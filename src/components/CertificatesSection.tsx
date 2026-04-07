@@ -141,6 +141,11 @@ const CertificatesSection = () => {
       id: 28,
       src: '/lovable-uploads/ai-oceans-cert.jpg',
       alt: 'AI for Oceans Hour of Code Certificate'
+    },
+    {
+      id: 29,
+      src: '/lovable-uploads/azure-ai-fundamentals-cert-2026.jpg',
+      alt: 'Microsoft Certified Azure AI Fundamentals (2026)'
     }
   ];
 
