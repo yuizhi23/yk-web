@@ -146,6 +146,11 @@ const CertificatesSection = () => {
       id: 29,
       src: '/lovable-uploads/azure-ai-fundamentals-cert-2026.jpg',
       alt: 'Microsoft Certified Azure AI Fundamentals (2026)'
+    },
+    {
+      id: 30,
+      src: '/lovable-uploads/arkavidia-uxvidia-cert.jpg',
+      alt: 'Arkavidia 10.0 UXVidia Competition Certificate'
     }
   ];
 
