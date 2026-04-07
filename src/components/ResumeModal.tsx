@@ -304,6 +304,8 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
               <div>• Career Preparation with HRD – KT&G SangSang Univ. Indonesia (Apr 2025)</div>
               <div>• Staff Muda Divisi Kemahasiswaan – Himpunan Mahasiswa S1 Informatika Telkom University (Apr 2025)</div>
               <div>• Qwords Digital Sprint: Digital Marketing – Qwords Cloud Web Hosting Indonesia (May 2025)</div>
+              <div>• Participant of UXVidia Competition – Arkavidia 10.0 (Mar 2026)</div>
+              <div>• Azure AI Fundamentals (Mar 2026)</div>
             </div>
           </section>
 
