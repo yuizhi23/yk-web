@@ -124,6 +124,10 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                 <h3 className="font-semibold">User Interface (UI) Design, Documentation, and System Testing at Diskominfo West Java Province</h3>
                 <p className="text-sm text-muted-foreground">Designed the user interface, prepared technical documentation, and performed system testing for an information system at the West Java Provincial Communication and Informatics Office.</p>
               </div>
+              <div>
+                <h3 className="font-semibold">Multimodal Cyberbullying Detection on Platform X Using a Deep Learning Approach Based on CNN-BiLSTM and IndoBART with Word2Vec Feature Expansion</h3>
+                <p className="text-sm text-muted-foreground">Developed a multimodal cyberbullying detection system for Platform X by combining text and image features using CNN-BiLSTM, IndoBART, and Word2Vec feature expansion to improve classification accuracy.</p>
+              </div>
             </div>
           </section>
 
