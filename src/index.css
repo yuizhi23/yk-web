@@ -8,40 +8,40 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Yukie's Portfolio Color System - Asphalt & Paper */
-    --background: 42 9% 96%; /* Paper #efede3 */
-    --foreground: 18 8% 19%; /* Asphalt #302f2c */
+    /* Elegant Baby Blue & Maroon Palette */
+    --background: 205 60% 97%;
+    --foreground: 350 55% 22%;
 
-    --card: 42 9% 96%;
-    --card-foreground: 18 8% 19%;
+    --card: 0 0% 100%;
+    --card-foreground: 350 55% 22%;
 
-    --popover: 42 9% 96%;
-    --popover-foreground: 18 8% 19%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 350 55% 22%;
 
-    --primary: 18 8% 19%; /* Asphalt */
-    --primary-foreground: 42 9% 96%; /* Paper */
+    --primary: 350 60% 28%; /* Maroon */
+    --primary-foreground: 205 70% 96%;
 
-    --secondary: 42 9% 90%;
-    --secondary-foreground: 18 8% 19%;
+    --secondary: 205 65% 90%; /* Baby blue */
+    --secondary-foreground: 350 55% 22%;
 
-    --muted: 42 9% 90%;
-    --muted-foreground: 18 8% 45%;
+    --muted: 205 40% 93%;
+    --muted-foreground: 350 20% 40%;
 
-    --accent: 42 9% 85%; /* Light Paper accent */
-    --accent-foreground: 18 8% 19%;
+    --accent: 205 75% 78%; /* Vivid baby blue */
+    --accent-foreground: 350 55% 22%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 40 20% 93%;
+    --destructive-foreground: 205 70% 96%;
 
-    --border: 40 15% 85%;
-    --input: 40 15% 85%;
-    --ring: 25 8% 18%;
+    --border: 205 40% 85%;
+    --input: 205 40% 88%;
+    --ring: 350 60% 28%;
 
     /* Custom Portfolio Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(25 8% 18% / 0.95), hsl(25 8% 25% / 0.85));
-    --section-gradient: linear-gradient(180deg, hsl(40 20% 96%), hsl(40 20% 93%));
-    --card-shadow: 0 8px 32px hsl(25 8% 18% / 0.1);
-    --hover-shadow: 0 12px 40px hsl(25 8% 18% / 0.15);
+    --hero-gradient: linear-gradient(135deg, hsl(350 60% 28% / 0.95), hsl(350 50% 40% / 0.85));
+    --section-gradient: linear-gradient(180deg, hsl(205 60% 97%), hsl(205 70% 92%));
+    --card-shadow: 0 8px 32px hsl(350 55% 22% / 0.12);
+    --hover-shadow: 0 12px 40px hsl(350 55% 22% / 0.18);
     
     /* Animation Tokens */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
