@@ -128,6 +128,10 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                 <h3 className="font-semibold">Multimodal Cyberbullying Detection on Platform X Using a Deep Learning Approach Based on CNN-BiLSTM and IndoBART with Word2Vec Feature Expansion</h3>
                 <p className="text-sm text-muted-foreground">Developed a multimodal cyberbullying detection system for Platform X by combining text and image features using CNN-BiLSTM, IndoBART, and Word2Vec feature expansion to improve classification accuracy.</p>
               </div>
+              <div>
+                <h3 className="font-semibold">Development of an Interactive Web-Based Company Profile for Exit Apparel</h3>
+                <p className="text-sm text-muted-foreground">Designed and developed an interactive web-based company profile for Exit Apparel, featuring responsive design, engaging product showcases, and an intuitive user interface to strengthen the brand's online presence.</p>
+              </div>
             </div>
           </section>
 

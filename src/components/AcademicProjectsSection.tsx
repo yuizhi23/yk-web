@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { GraduationCap, Brain, Network, Droplets, Cat, Shield, Film, Heart, Monitor, Gamepad2, Database, Smartphone, Users, FileText, ShieldAlert } from 'lucide-react';
+import { GraduationCap, Brain, Network, Droplets, Cat, Shield, Film, Heart, Monitor, Gamepad2, Database, Smartphone, Users, FileText, ShieldAlert, Building2 } from 'lucide-react';
 
 const projects = [
   {
@@ -65,6 +65,10 @@ const projects = [
   {
     title: "Multimodal Cyberbullying Detection on Platform X Using a Deep Learning Approach Based on CNN-BiLSTM and IndoBART with Word2Vec Feature Expansion",
     icon: ShieldAlert
+  },
+  {
+    title: "Development of an Interactive Web-Based Company Profile for Exit Apparel",
+    icon: Building2
   }
 ];
 
