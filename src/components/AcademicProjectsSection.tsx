@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { GraduationCap, Brain, Network, Droplets, Cat, Shield, Film, Heart, Monitor, Gamepad2, Database, Smartphone } from 'lucide-react';
+import { GraduationCap, Brain, Network, Droplets, Cat, Shield, Film, Heart, Monitor, Gamepad2, Database, Smartphone, Users } from 'lucide-react';
 
 const projects = [
   {
@@ -53,6 +53,10 @@ const projects = [
   {
     title: "Query Performance Analysis With and Without Indexing",
     icon: Database
+  },
+  {
+    title: "E-Connect: Student Learning Platform and Alumni Connection for Environmental Engineering",
+    icon: Users
   }
 ];
 

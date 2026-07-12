@@ -116,6 +116,10 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                 <h3 className="font-semibold">Query Performance Analysis With and Without Indexing</h3>
                 <p className="text-sm text-muted-foreground">Evaluated query performance in databases with and without indexing, including execution time, resource efficiency, and impact on write operations.</p>
               </div>
+              <div>
+                <h3 className="font-semibold">E-Connect: Student Learning Platform and Alumni Connection for Environmental Engineering</h3>
+                <p className="text-sm text-muted-foreground">Developed a learning platform that connects Environmental Engineering students with alumni, facilitating knowledge sharing, mentorship, and academic collaboration.</p>
+              </div>
             </div>
           </section>
 
