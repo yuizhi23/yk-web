@@ -87,6 +87,12 @@ export const ExperienceSection = ({ onCompleteResumeClick }: ExperienceSectionPr
 
   const contentCreationExperience = [
     {
+      company: "BFI Finance",
+      role: "Field Marketing Staff",
+      period: "May 2026 | Indonesia (On-site)",
+      description: "Worked as a Field Marketing Staff at BFI Finance, responsible for direct marketing activities, customer acquisition, and promoting financial products to prospective customers in assigned areas."
+    },
+    {
       company: "bdgfolk",
       role: "Creative Talent (Content Creator, Video Editor & Scriptwriter)",
       period: "Jan 2026 | Indonesia (Hybrid)",

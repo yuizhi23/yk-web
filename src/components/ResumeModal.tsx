@@ -140,6 +140,11 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
             <h2 className="text-xl font-semibold text-primary mb-4">💼 Professional Experience</h2>
             <div className="space-y-4">
               <div>
+                <h3 className="font-semibold">📈 Field Marketing Staff — BFI Finance</h3>
+                <p className="text-xs text-muted-foreground/70">May 2026 | Indonesia (On-site)</p>
+                <p className="text-sm text-muted-foreground">Worked as a Field Marketing Staff at BFI Finance, responsible for direct marketing activities, customer acquisition, and promoting financial products to prospective customers in assigned areas.</p>
+              </div>
+              <div>
                 <h3 className="font-semibold">🎙️ Spokesperson & Content Narrator — PT KITAANTER TEKNOLOGI INDONESIA</h3>
                 <p className="text-xs text-muted-foreground/70">Oct 2025 | Indonesia (Remote)</p>
                 <p className="text-sm text-muted-foreground">Created and narrated a &quot;Day in My Life&quot; VOG (Voice-Over Guide) video showcasing the dynamic meeting culture at Kitaanter ID. Combined storytelling and authentic narration to highlight startup collaboration, innovation, and team synergy. Delivered engaging behind-the-scenes insights while maintaining a professional and relatable tone that aligns with the company&apos;s brand identity.</p>
