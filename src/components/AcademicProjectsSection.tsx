@@ -53,6 +53,10 @@ const projects = [
   {
     title: "Query Performance Analysis With and Without Indexing",
     icon: Database
+  },
+  {
+    title: "E-Connect: Student Learning Platform and Alumni Connection for Environmental Engineering",
+    icon: Users
   }
 ];
 
