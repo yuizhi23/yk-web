@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { GraduationCap, Brain, Network, Droplets, Cat, Shield, Film, Heart, Monitor, Gamepad2, Database, Smartphone, Users } from 'lucide-react';
+import { GraduationCap, Brain, Network, Droplets, Cat, Shield, Film, Heart, Monitor, Gamepad2, Database, Smartphone, Users, FileText } from 'lucide-react';
 
 const projects = [
   {
@@ -57,6 +57,10 @@ const projects = [
   {
     title: "E-Connect: Student Learning Platform and Alumni Connection for Environmental Engineering",
     icon: Users
+  },
+  {
+    title: "User Interface (UI) Design, Documentation, and System Testing at Diskominfo West Java Province",
+    icon: FileText
   }
 ];
 
