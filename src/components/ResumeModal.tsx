@@ -120,6 +120,10 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                 <h3 className="font-semibold">E-Connect: Student Learning Platform and Alumni Connection for Environmental Engineering</h3>
                 <p className="text-sm text-muted-foreground">Developed a learning platform that connects Environmental Engineering students with alumni, facilitating knowledge sharing, mentorship, and academic collaboration.</p>
               </div>
+              <div>
+                <h3 className="font-semibold">User Interface (UI) Design, Documentation, and System Testing at Diskominfo West Java Province</h3>
+                <p className="text-sm text-muted-foreground">Designed the user interface, prepared technical documentation, and performed system testing for an information system at the West Java Provincial Communication and Informatics Office.</p>
+              </div>
             </div>
           </section>
 
