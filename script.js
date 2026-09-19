@@ -1107,7 +1107,7 @@ function initScrollEffects() {
   const progressBar = document.getElementById('scrollProgressBar');
   const bttBtn = document.getElementById('backToTopBtn');
   const navLinks = document.querySelectorAll('.nav-links a');
-  const sections = ['hero', 'about', 'education', 'experience', 'projects', 'gallery', 'certificates', 'portfolio', 'skills', 'contact']
+  const sections = ['hero', 'about', 'education', 'experience', 'projects', 'gallery', 'certificates', 'skills', 'contact']
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
