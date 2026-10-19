@@ -9,11 +9,14 @@
   <meta name="description" content="Personal Portfolio of Yukie Kiyoshi — Informatics Student at Telkom University, Voice Over Artist, Content Creator, and Spokesperson.">
   <meta property="og:title" content="Yukie Kiyoshi ✦ Interactive Portfolio">
   
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Cache Control for Dev -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
-  <!-- Preload Critical Hero Video Loop -->
-  <link rel="preload" href="assets/Hero-Photos/yukie_loop.mp4" as="video" type="video/mp4">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=6.0">
+  <link rel="icon" href="assets/chibi_yukie.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -181,65 +184,56 @@
           </button>
         </div>
 
-        <!-- CENTER COLUMN: Interactive Cyber Phone Gadget with Moving Video Loop -->
-        <div class="hero-gadget-wrapper">
-          <div class="cyber-phone-frame">
-            <div class="phone-screen" title="Click phone for camera shutter flash!">
-              
-              <!-- Camera Flash Effect Layer -->
-              <div class="camera-flash-layer" id="cameraFlashLayer"></div>
+        <!-- CENTER COLUMN: Open Stage Chibi Pixel Avatar (Borderless & Phone-Free) -->
+        <div class="hero-chibi-open-stage" id="heroChibiStage">
+          
+          <!-- Top Floating Pixel Status Pill -->
+          <div class="chibi-stage-status-badge" id="chibiMoodBadge" title="Click to poke!">
+            STATUS: CODING AI 🤖
+          </div>
 
-              <!-- Phone Status Header -->
-              <div class="phone-top-bar">
-                <span>◀ REC</span>
-                <button class="phone-filter-btn" id="phoneFilterBtn" title="Cycle Camera Lens Filter" style="background:transparent; border:1px solid rgba(255,255,255,0.4); color:#fff; font-family:var(--font-pixel); font-size:0.65rem; border-radius:12px; padding:1px 8px; cursor:pointer; transition:all 0.15s ease;">📷 FILTER</button>
-                <div style="display:flex; align-items:center; gap:0.4rem;">
-                  <span>📶</span>
-                  <span>🔋</span>
-                </div>
-              </div>
+          <!-- Main Chibi Character Stage -->
+          <div class="chibi-character-center">
+            <!-- Subtle Retro Halo Glow Behind Chibi -->
+            <div class="chibi-retro-glow"></div>
 
-              <!-- Phone Screen Body: Fluid Moving Video Loop of Yukie -->
-              <div class="phone-screen-body" id="phoneScreenBody">
-                <div class="phone-filter-badge" id="phoneFilterBadge">STANDARD LENS</div>
-                <video autoplay loop muted playsinline preload="auto" poster="assets/Hero-Photos/yukie_loop_frame.jpg" class="phone-slide-img active" id="phoneHeroVideo">
-                  <source src="assets/Hero-Photos/yukie_loop.mp4" type="video/mp4">
-                  <img src="assets/Hero-Photos/yukie_loop.webp" alt="Yukie Kiyoshi in Motion">
-                </video>
+            <!-- Floating Retro Doodles / Stickers -->
+            <div class="chibi-float-sticker sticker-tl">🎵</div>
+            <div class="chibi-float-sticker sticker-tr">✨</div>
+            <div class="chibi-float-sticker sticker-bl">💖</div>
+            <div class="chibi-float-sticker sticker-br">⭐</div>
 
-                <!-- Reference-Matching Doodle Musical Notes -->
-                <div class="phone-note note-tl">🎵</div>
-                <div class="phone-note note-tr">🎶</div>
-                <div class="phone-note note-bl">🎵</div>
-                <div class="phone-note note-br">🎶</div>
-
-                <!-- Reference-Matching Elegant Pixel Badge -->
-                <div class="phone-bubble yellow-bubble">YUKIE KIYOSHI ✦</div>
-
-                <!-- Interactive speech bubble in phone screen -->
-                <div class="phone-speech-bubble" id="phoneStatusBubble">
-                  AI Engineer & Creative Technologist ✦
-                </div>
-              </div>
-
-              <!-- Interactive Phone Bottom Toolbar (Balanced, Harmonized & Crisp) -->
-              <div class="phone-bottom-bar">
-                <button class="phone-action-btn btn-love" id="phoneLoveBtn" title="Send Reaction">
-                  <span class="btn-emoji">💖</span>
-                  <span class="btn-text">Love</span>
-                </button>
-                <button class="phone-action-btn btn-call" id="phoneCallBtn" title="Simulate Call to Yukie">
-                  <span class="btn-emoji">📞</span>
-                  <span class="btn-text">Call</span>
-                </button>
-                <button class="phone-action-btn btn-snap" id="phoneSnapBtn" title="Camera Shutter Flash">
-                  <span class="btn-emoji">📸</span>
-                  <span class="btn-text">Snap</span>
-                </button>
-              </div>
+            <!-- Interactive Chibi Avatar -->
+            <div class="chibi-avatar-wrapper" id="chibiAvatarWrapper" title="Poke me!">
+              <img src="assets/chibi_yukie.svg?v=19.0" class="chibi-pixel-img" alt="Yukie Chibi Indie Illustration" >
             </div>
+
+            <!-- Pixel Ground Shadow -->
+            <div class="chibi-ground-shadow"></div>
+          </div>
+
+          <!-- Interactive Speech Bubble -->
+          <div class="chibi-open-speech-bubble" id="phoneStatusBubble" title="Click to chat!">
+            Hello! I'm Yukie ✦ (Click me!)
+          </div>
+
+          <!-- Quick Action Buttons: Love / Call / Snap -->
+          <div class="chibi-action-pills-bar">
+            <button class="chibi-pill-btn btn-love" id="phoneLoveBtn" title="Send Love Reaction">
+              <span class="btn-emoji">💖</span>
+              <span class="btn-text">Love</span>
+            </button>
+            <button class="chibi-pill-btn btn-call" id="phoneCallBtn" title="Simulate Call to Yukie">
+              <span class="btn-emoji">📞</span>
+              <span class="btn-text">Call</span>
+            </button>
+            <button class="chibi-pill-btn btn-snap" id="phoneSnapBtn" title="Snapshot Flash">
+              <span class="btn-emoji">📸</span>
+              <span class="btn-text">Snap</span>
+            </button>
           </div>
         </div>
+
 
         <!-- RIGHT COLUMN: Desktop App Launcher Grid -->
         <div class="hero-apps-col">
@@ -1292,9 +1286,9 @@
   <section id="certificates">
     <div class="container">
       <div style="text-align: center; margin-bottom: 1.5rem;">
-        <div class="section-badge-pill">★ ALL 30 CREDENTIALS & CERTIFICATIONS ★</div>
-        <h2 class="section-title">All 30 Certifications</h2>
-        <p class="section-subtitle">Exhaustive verified archive of all 30 credentials across AI, Cloud, Leadership, Media, and Business. Click any certificate for high-res zoom.</p>
+        <div class="section-badge-pill">★ ALL 31 CREDENTIALS & CERTIFICATIONS ★</div>
+        <h2 class="section-title">All 31 Certifications</h2>
+        <p class="section-subtitle">Exhaustive verified archive of all 31 credentials across AI, Cloud, Leadership, Media, Creative & Competitions. Click any certificate for high-res zoom.</p>
       </div>
 
       <div class="cert-quote-box">
@@ -1304,25 +1298,25 @@
       <!-- Interactive Controls: Filter Pills, Search Bar, View Switcher & Live Counter -->
       <div class="cert-controls-bar">
         <div class="cert-search-row">
-          <input type="text" id="certSearchInput" class="cert-search-box" placeholder="🔍 Instant search all 30 certs (e.g. Azure, Python, ITB, Dart, PR, Excel, Award)...">
+          <input type="text" id="certSearchInput" class="cert-search-box" placeholder="🔍 Instant search all 31 certs (e.g. Azure, UNSRI, PHC, ITB, Dart, PR, Excel, Award)...">
           
           <div class="cert-view-toggles">
-            <button class="view-switch-btn active" id="certGridViewBtn" title="Show all 30 in grid">▦ Show All Grid</button>
+            <button class="view-switch-btn active" id="certGridViewBtn" title="Show all 31 in grid">▦ Show All Grid</button>
             <button class="view-switch-btn" id="certCarouselViewBtn" title="Switch to slider carousel">🎞️ Slider</button>
-            <div class="cert-counter-badge" id="certCounter">Showing 30 of 30</div>
+            <div class="cert-counter-badge" id="certCounter">Showing 31 of 31</div>
           </div>
         </div>
 
         <div class="cert-filter-row">
-          <button class="cert-filter-pill active" data-filter="all">🌟 All (30)</button>
+          <button class="cert-filter-pill active" data-filter="all">🌟 All (31)</button>
           <button class="cert-filter-pill" data-filter="tech">🤖 AI & Tech (6)</button>
-          <button class="cert-filter-pill" data-filter="awards">🏆 Honors & Awards (4)</button>
+          <button class="cert-filter-pill" data-filter="awards">🏆 Honors & Awards (5)</button>
           <button class="cert-filter-pill" data-filter="pr">📢 PR & Leadership (10)</button>
           <button class="cert-filter-pill" data-filter="business">💼 Business & Skills (10)</button>
         </div>
       </div>
 
-      <!-- Cert Display Track (Default: Responsive Grid Showing ALL 30 at Once!) -->
+      <!-- Cert Display Track (Default: Responsive Grid Showing ALL 31 at Once!) -->
       <div class="cert-carousel-container" id="certCarouselContainer">
         <button class="jelly-round-btn yellow cert-nav-btn" id="certScrollPrev" title="Scroll Left" style="display: none;">◀</button>
 
@@ -1535,6 +1529,13 @@
             <img src="assets/Certificates/f1481f8a-3106-4f66-afb7-817da957378e.png" alt="Certification 30">
             <div class="cert-badge-tag tech">AI & Tech</div>
             <div class="cert-hover-tag">Informatics Symposium</div>
+          </div>
+
+          <!-- 31 -->
+          <div class="cert-item-card" data-category="awards" data-keywords="unsri fkm public health competition phc 6.0 2026 poster kesehatan silent epidemic sriwijaya himkesma lomba award jurus sehat anak cerdik" data-zoom-src="assets/Certificates/phc-unsri-poster-cert-2026.png" data-zoom-cap="Peserta Lomba Poster Kesehatan Public Health Competition (PHC 6.0) — FKM UNSRI 2026">
+            <img src="assets/Certificates/phc-unsri-poster-cert-2026.png" alt="Sertifikat PHC 6.0 UNSRI 2026">
+            <div class="cert-badge-tag awards">Award & Poster</div>
+            <div class="cert-hover-tag">PHC 6.0 UNSRI Poster</div>
           </div>
         </div>
 
@@ -1880,12 +1881,13 @@
         <!-- Awarding -->
         <div class="resume-section-heading">★ Honors & Awarding</div>
         <ul style="padding-left: 1.25rem; line-height: 1.8; font-size: 0.95rem; color: #1e293b;">
+          <li><strong>Peserta Lomba Poster Kesehatan PHC 6.0 (2026)</strong> — FKM Universitas Sriwijaya (Tema: "Silent Epidemic: PTM pada Generasi Muda")</li>
           <li><strong>Mahasiswa '23 Of The Year (2025)</strong> — HIMA S1 Informatika Telkom University (Recognized for outstanding academic, organizational & creative leadership)</li>
           <li><strong>Mahasiswa '23 Of The Year (2024)</strong> — HIMA S1 Informatika Telkom University | Dec 2024</li>
         </ul>
 
-        <!-- Complete List of ALL 30 Certifications -->
-        <div class="resume-section-heading">★ All 30 Certifications & Credentials (Complete Verified Archive)</div>
+        <!-- Complete List of ALL 31 Certifications -->
+        <div class="resume-section-heading">★ All 31 Certifications & Credentials (Complete Verified Archive)</div>
         <div class="resume-certs-2col">
           <div class="resume-cert-item">
             <div class="rc-num">01.</div>
@@ -2126,6 +2128,14 @@
               <span class="rc-issuer">Informatics Congress • 2025</span>
             </div>
           </div>
+
+          <div class="resume-cert-item">
+            <div class="rc-num">31.</div>
+            <div>
+              <strong>Peserta Lomba Poster Kesehatan Public Health Competition (PHC 6.0)</strong><br>
+              <span class="rc-issuer">HIMKESMA FKM Universitas Sriwijaya • 2026</span>
+            </div>
+          </div>
         </div>
 
         <!-- Portfolios & Online Presence -->
@@ -2297,6 +2307,7 @@
   </button>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
+  <script src="script.js?v=4.2"></script>
+  <div class="web-marker">Web Marker © Yukie</div>
 </body>
 </html>

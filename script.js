@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAudioSFX();
   initClock();
   initPhoneSimulator();
+  initChibiPhone();
   initCameraFilters();
   initFortuneBox();
   initCertificatesManager();
@@ -159,7 +160,8 @@ function initPhoneSimulator() {
   const callCloseBtn = document.getElementById('callCardCloseBtn');
   const callHangupBtn = document.getElementById('callCardHangupBtn');
 
-  if (slides.length === 0) return;
+  // Chibi or Terminal mode: no slide images needed
+  if (slides.length === 0 && !document.getElementById('terminalOutput') && !document.getElementById('chibiAvatarWrapper')) return;
 
   let currentIdx = 0;
   const messages = [
@@ -202,13 +204,20 @@ function initPhoneSimulator() {
 
   function triggerShutter() {
     sfxShutter();
-    if (flash) {
-      flash.classList.add('flashing');
-      setTimeout(() => {
-        flash.classList.remove('flashing');
-        if (bubble) bubble.textContent = 'Snapshot captured! 📸 ✦';
-      }, 120);
-    }
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.inset = '0';
+    overlay.style.background = '#ffffff';
+    overlay.style.zIndex = '9999';
+    overlay.style.opacity = '0.85';
+    overlay.style.pointerEvents = 'none';
+    overlay.style.transition = 'opacity 0.25s ease';
+    document.body.appendChild(overlay);
+    setTimeout(() => {
+      overlay.style.opacity = '0';
+      setTimeout(() => overlay.remove(), 250);
+      if (bubble) bubble.textContent = 'Snapshot captured! 📸 ✦';
+    }, 70);
   }
 
   function show(idx) {
@@ -234,7 +243,7 @@ function initPhoneSimulator() {
   // Camera shutter flash when clicking phone screen or Snap button
   if (screen && flash) {
     screen.addEventListener('click', (e) => {
-      if (e.target.closest('button')) return;
+      if (e.target.closest('button') || e.target.closest('.chibi-avatar-wrapper') || e.target.closest('.phone-speech-bubble') || e.target.closest('.phone-bubble')) return;
       triggerShutter();
       const rect = screen.getBoundingClientRect();
       spawnConfetti(e.clientX || (rect.left + rect.width / 2), e.clientY || (rect.top + rect.height / 2), 16, ['📸', '✨', '✦', '⭐']);
@@ -301,7 +310,102 @@ function initPhoneSimulator() {
 }
 
 /* ==========================================================================
-   4. INTERACTIVE PHONE CAMERA FILTERS
+   3b. RETRO CHIBI PIXEL ART INTERACTION ENGINE
+   ========================================================================== */
+function initChibiPhone() {
+  const avatarWrapper = document.getElementById('chibiAvatarWrapper');
+  const speechBubble = document.getElementById('phoneStatusBubble');
+  const moodBadge = document.getElementById('chibiMoodBadge');
+  const screenBody = document.getElementById('heroChibiStage') || document.body;
+  const loveBtn = document.getElementById('phoneLoveBtn');
+
+  if (!avatarWrapper && !speechBubble) return;
+
+  const dialogues = [
+    { text: "Hello! I'm Yukie ✦ Lovely to meet you! (Click me!)", mood: 'coding AI 🤖' },
+    { text: 'Vibing to smooth R&B grooves while debugging ML models 🎧', mood: 'vibing to R&B 🎧' },
+    { text: 'Wanna listen to my commercial voiceover samples? 🎙️', mood: 'voice acting 🎙️' },
+
+    { text: "Let's collaborate on awesome tech projects! 🚀", mood: 'building tech 💻' },
+    { text: 'Hire me maybe? :3 💖', mood: 'ready to work 🌟' }
+  ];
+
+  let currentDialogueIdx = 0;
+
+  function triggerChibiReaction(customText) {
+    // 1. Play sound effect
+    sfxClick();
+
+    // 2. Animate jump
+    if (avatarWrapper) {
+      avatarWrapper.classList.remove('chibi-jump');
+      void avatarWrapper.offsetWidth; // force reflow
+      avatarWrapper.classList.add('chibi-jump');
+      setTimeout(() => avatarWrapper.classList.remove('chibi-jump'), 600);
+    }
+
+    // 3. Spawn floating heart particles
+    spawnChibiHearts();
+
+    // 4. Update dialogue text
+    if (customText && speechBubble) {
+      speechBubble.textContent = customText;
+    } else {
+      currentDialogueIdx = (currentDialogueIdx + 1) % dialogues.length;
+      const item = dialogues[currentDialogueIdx];
+      if (speechBubble) speechBubble.textContent = item.text;
+      if (moodBadge) moodBadge.textContent = item.mood;
+    }
+  }
+
+  function spawnChibiHearts() {
+    const stage = document.getElementById('heroChibiStage') || document.body;
+    const emojis = ['💖', '✨', '⭐', '🌸'];
+    for (let i = 0; i < 5; i++) {
+      const p = document.createElement('span');
+      p.className = 'chibi-heart-particle';
+      p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      p.style.left = `${46 + (Math.random() * 16 - 8)}%`;
+      p.style.top = `${40 + (Math.random() * 12)}%`;
+      p.style.setProperty('--tx', `${(Math.random() - 0.5) * 110}px`);
+      p.style.setProperty('--ty', `-${50 + Math.random() * 65}px`);
+      stage.appendChild(p);
+      setTimeout(() => p.remove(), 900);
+    }
+  }
+
+  // Click listeners
+  if (avatarWrapper) {
+    avatarWrapper.addEventListener('click', (e) => {
+      e.stopPropagation();
+      triggerChibiReaction();
+    });
+  }
+
+  if (speechBubble) {
+    speechBubble.addEventListener('click', (e) => {
+      e.stopPropagation();
+      triggerChibiReaction();
+    });
+  }
+
+  if (moodBadge) {
+    moodBadge.addEventListener('click', (e) => {
+      e.stopPropagation();
+      triggerChibiReaction();
+    });
+  }
+
+  // Hook up phoneLoveBtn
+  if (loveBtn) {
+    loveBtn.addEventListener('click', () => {
+      triggerChibiReaction('Thanks for the love! 💖 (⁄ ⁄•⁄ω⁄•⁄ ⁄)');
+    });
+  }
+}
+
+/* ==========================================================================
+   4. INTERACTIVE CHIBI MOOD FILTER SWITCHER
    ========================================================================== */
 function initCameraFilters() {
   const filterBtn = document.getElementById('phoneFilterBtn');
@@ -310,47 +414,40 @@ function initCameraFilters() {
 
   if (!filterBtn || !screenBody) return;
 
-  const filters = [
-    { id: 'normal', name: 'STANDARD LENS' },
-    { id: 'vintage', name: '90s VINTAGE LENS' },
-    { id: 'pastel', name: 'DREAMY PASTEL' },
-    { id: 'vivid', name: 'VIVID POP' },
-    { id: 'noir', name: 'CLASSIC NOIR' }
+  const themes = [
+    { cls: '',             name: 'KAWAII PASTEL',   emoji: '🌸' },
+    { cls: 'mood-lime',    name: 'CYBER LIME',      emoji: '🍏' },
+    { cls: 'mood-vapor',   name: 'VAPORWAVE',       emoji: '🌊' },
+    { cls: 'mood-gameboy', name: 'GAMEBOY 8-BIT',   emoji: '💾' }
   ];
 
-  let currentFilterIdx = 0;
+  let currentIdx = 0;
   let badgeTimeout = null;
 
-  function setFilter(index) {
-    currentFilterIdx = (index + filters.length) % filters.length;
-    const active = filters[currentFilterIdx];
+  function setTheme(index) {
+    currentIdx = (index + themes.length) % themes.length;
+    const active = themes[currentIdx];
 
-    filters.forEach(f => {
-      screenBody.classList.remove(`filter-${f.id}`);
-    });
-
-    if (active.id !== 'normal') {
-      screenBody.classList.add(`filter-${active.id}`);
-    }
+    // Remove all theme classes
+    themes.forEach(t => { if (t.cls) screenBody.classList.remove(t.cls); });
+    if (active.cls) screenBody.classList.add(active.cls);
 
     if (badge) {
-      badge.textContent = active.name;
+      badge.textContent = `${active.emoji} ${active.name}`;
       badge.classList.add('active');
       clearTimeout(badgeTimeout);
-      badgeTimeout = setTimeout(() => {
-        badge.classList.remove('active');
-      }, 1800);
+      badgeTimeout = setTimeout(() => badge.classList.remove('active'), 2000);
     }
     sfxClick();
   }
 
   filterBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    setFilter(currentFilterIdx + 1);
+    setTheme(currentIdx + 1);
   });
 
-  // Expose globally for keyboard shortcut 'F'
-  window.cyclePhoneFilter = () => setFilter(currentFilterIdx + 1);
+  // Expose for keyboard shortcut 'F'
+  window.cyclePhoneFilter = () => setTheme(currentIdx + 1);
 }
 
 /* ==========================================================================
@@ -852,6 +949,9 @@ function initStatsCounter() {
    13. SPARKLE CURSOR TRAIL
    ========================================================================== */
 function initSparkleCursor() {
+  // Skip sparkle trail on touch/mobile devices — unnecessary DOM churn
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
   const sparkles = ['✨', '✦', '⭐', '💖'];
   let lastX = 0;
   let lastY = 0;
@@ -922,6 +1022,22 @@ function initProjectsFilter() {
    15. TACTILE 3D PARALLAX TILT ON HOVER
    ========================================================================== */
 function init3DTilt() {
+  // Skip 3D tilt on touch/mobile devices — mousemove on 50+ elements hurts perf
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    // Still attach click audio & confetti for touch
+    document.querySelectorAll('.contact-jelly-card').forEach(card => {
+      card.addEventListener('click', () => sfxPop());
+    });
+    document.querySelectorAll('.award-box-card, .award-trophy-badge').forEach(award => {
+      award.addEventListener('click', (e) => {
+        sfxChime();
+        const rect = award.getBoundingClientRect();
+        spawnConfetti(e.clientX || (rect.left + rect.width / 2), e.clientY || (rect.top + rect.height / 2), 24, ['🏆', '✨', '⭐', '🎓', '✦']);
+      });
+    });
+    return;
+  }
+
   const tiltElements = document.querySelectorAll('.polaroid-card, .proj-folder-card, .hero-nav-pill-btn, .award-box-card, .contact-jelly-card');
 
   tiltElements.forEach(el => {
@@ -1616,7 +1732,11 @@ function initContentCreatorReels() {
   reelCards.forEach(card => videoObserver.observe(card));
 
   // Global touch / scroll wake-up: resumes any video blocked by strict mobile power saver
+  // Throttled to max once per 500ms to avoid firing on every scroll pixel
+  let wakeUpThrottle = null;
   const wakeUpAllVideos = () => {
+    if (wakeUpThrottle) return;
+    wakeUpThrottle = setTimeout(() => { wakeUpThrottle = null; }, 500);
     allReelVideos.forEach(v => {
       const rect = v.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight + 200 && rect.bottom > -200;
