@@ -250,10 +250,108 @@
               <small>LAB 2026</small>
             </div>
 
-            <!-- Interactive Chibi Mini-Sticker Accent (retaining interactive chat) -->
-            <div class="punk-chibi-badge" id="chibiAvatarWrapper" title="Poke Yukie!">
-              <img src="assets/chibi_yukie.svg?v=20.0" alt="Yukie Sticker" class="punk-chibi-sticker-img">
-              <div class="punk-speech-pill" id="phoneStatusBubble">Click me! ✦</div>
+            <!-- Interactive Cat Chibi Mascot (Click to meow & change face expressions!) -->
+            <div class="punk-chibi-badge" id="chibiAvatarWrapper" title="Click to interact! 🐾">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" width="100%" height="100%" class="punk-chibi-sticker-img" id="catChibiSvg">
+                <defs>
+                  <style>
+                    #catG { animation: catBob 3.2s ease-in-out infinite; will-change: transform; }
+                    #catSh { animation: catSh 3.2s ease-in-out infinite; transform-origin: 100px 207px; will-change: transform, opacity; }
+                    @keyframes catBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+                    @keyframes catSh  { 0%,100%{transform:scaleX(1);opacity:.16} 50%{transform:scaleX(.74);opacity:.08} }
+                  </style>
+                </defs>
+                <ellipse id="catSh" cx="100" cy="207" rx="48" ry="6" fill="#000"/>
+                <g id="catG">
+                  <!-- Tail -->
+                  <path d="M 96 194 Q 68 180 56 160 Q 48 144 61 134 Q 73 126 78 143 Q 82 155 91 163 Q 98 175 100 191 Z" fill="#1c1820" stroke="#0a0810" stroke-width="1.8"/>
+                  <ellipse cx="60" cy="135" rx="9" ry="6.5" fill="#e4daf0" transform="rotate(-28 60 135)"/>
+                  <!-- Ears -->
+                  <polygon points="46,76 64,18 92,70" fill="#1c1820" stroke="#0a0810" stroke-width="2.2"/>
+                  <polygon points="57,69 66,28 84,67" fill="#e06080" opacity="0.72"/>
+                  <polygon points="154,76 136,18 108,70" fill="#1c1820" stroke="#0a0810" stroke-width="2.2"/>
+                  <polygon points="143,69 134,28 116,67" fill="#e06080" opacity="0.72"/>
+                  <!-- Head -->
+                  <circle cx="100" cy="108" r="68" fill="#1c1820" stroke="#0a0810" stroke-width="2.5"/>
+                  <!-- Nose -->
+                  <path d="M 96 117 L 100 123 L 104 117 Q 100 112 96 117 Z" fill="#e0708a" stroke="#b05068" stroke-width="0.8"/>
+                  <!-- Whiskers -->
+                  <line x1="80" y1="104" x2="28" y2="96" stroke="#cac4de" stroke-width="1.6" stroke-linecap="round" opacity="0.82"/>
+                  <line x1="80" y1="111" x2="26" y2="111" stroke="#cac4de" stroke-width="1.6" stroke-linecap="round" opacity="0.82"/>
+                  <line x1="80" y1="118" x2="30" y2="125" stroke="#cac4de" stroke-width="1.6" stroke-linecap="round" opacity="0.82"/>
+                  <line x1="120" y1="104" x2="172" y2="96" stroke="#cac4de" stroke-width="1.6" stroke-linecap="round" opacity="0.82"/>
+                  <line x1="120" y1="111" x2="174" y2="111" stroke="#cac4de" stroke-width="1.6" stroke-linecap="round" opacity="0.82"/>
+                  <line x1="120" y1="118" x2="170" y2="125" stroke="#cac4de" stroke-width="1.6" stroke-linecap="round" opacity="0.82"/>
+
+                  <!-- FACE 1: NORMAL EYES -->
+                  <g id="catFaceNormal" class="cat-face-group">
+                    <ellipse cx="76" cy="94" rx="16" ry="18" fill="#ff1e27"/>
+                    <ellipse cx="76" cy="94" rx="6" ry="13" fill="#0a0810"/>
+                    <circle cx="70" cy="87" r="5" fill="#fff" opacity="0.9"/>
+                    <ellipse cx="124" cy="94" rx="16" ry="18" fill="#ff1e27"/>
+                    <ellipse cx="124" cy="94" rx="6" ry="13" fill="#0a0810"/>
+                    <circle cx="118" cy="87" r="5" fill="#fff" opacity="0.9"/>
+                    <path d="M 59 82 Q 76 76 93 82" fill="none" stroke="#0a0810" stroke-width="2.8" stroke-linecap="round"/>
+                    <path d="M 107 82 Q 124 76 141 82" fill="none" stroke="#0a0810" stroke-width="2.8" stroke-linecap="round"/>
+                    <path d="M 91 128 Q 100 134 109 128" fill="none" stroke="#0a0810" stroke-width="2.2" stroke-linecap="round"/>
+                  </g>
+
+                  <!-- FACE 2: HAPPY SQUINT (^w^) -->
+                  <g id="catFaceHappy" class="cat-face-group" style="display: none;">
+                    <path d="M 60 96 Q 76 80 92 96" fill="none" stroke="#ff1e27" stroke-width="4.5" stroke-linecap="round"/>
+                    <path d="M 108 96 Q 124 80 140 96" fill="none" stroke="#ff1e27" stroke-width="4.5" stroke-linecap="round"/>
+                    <ellipse cx="58" cy="112" rx="11" ry="6.5" fill="#ff4d6d" opacity="0.75"/>
+                    <ellipse cx="142" cy="112" rx="11" ry="6.5" fill="#ff4d6d" opacity="0.75"/>
+                    <path d="M 88 127 Q 94 135 100 128 Q 106 135 112 127" fill="none" stroke="#0a0810" stroke-width="2.6" stroke-linecap="round"/>
+                    <path d="M 94 130 Q 100 141 106 130 Z" fill="#ff4d6d" stroke="#0a0810" stroke-width="1.2"/>
+                  </g>
+
+                  <!-- FACE 3: WINK (;3) -->
+                  <g id="catFaceWink" class="cat-face-group" style="display: none;">
+                    <path d="M 60 95 Q 76 103 92 95" fill="none" stroke="#ff1e27" stroke-width="4.5" stroke-linecap="round"/>
+                    <ellipse cx="124" cy="94" rx="16" ry="18" fill="#ff1e27"/>
+                    <polygon points="124,84 127,91 134,94 127,97 124,104 121,97 114,94 121,91" fill="#ffffff"/>
+                    <circle cx="124" cy="94" r="2.5" fill="#ff1e27"/>
+                    <ellipse cx="142" cy="112" rx="11" ry="6.5" fill="#ff4d6d" opacity="0.7"/>
+                    <path d="M 89 127 Q 95 136 101 129 Q 107 136 113 126" fill="none" stroke="#0a0810" stroke-width="2.6" stroke-linecap="round"/>
+                    <ellipse cx="106" cy="134" rx="3.5" ry="4.5" fill="#ff6b8b"/>
+                  </g>
+
+                  <!-- FACE 4: HEART EYES (♥.♥) -->
+                  <g id="catFaceLove" class="cat-face-group" style="display: none;">
+                    <path d="M 76 98 C 76 88, 62 84, 62 96 C 62 106, 76 114, 76 116 C 76 116, 90 106, 90 96 C 90 84, 76 88, 76 98 Z" fill="#ff0055"/>
+                    <circle cx="71" cy="93" r="3" fill="#fff" opacity="0.9"/>
+                    <path d="M 124 98 C 124 88, 110 84, 110 96 C 110 106, 124 114, 124 116 C 124 116, 138 106, 138 96 C 138 84, 124 88, 124 98 Z" fill="#ff0055"/>
+                    <circle cx="119" cy="93" r="3" fill="#fff" opacity="0.9"/>
+                    <ellipse cx="58" cy="113" rx="12" ry="7" fill="#ff2a6d" opacity="0.75"/>
+                    <ellipse cx="142" cy="113" rx="12" ry="7" fill="#ff2a6d" opacity="0.75"/>
+                    <path d="M 88 128 Q 94 136 100 129 Q 106 136 112 128" fill="none" stroke="#0a0810" stroke-width="2.6" stroke-linecap="round"/>
+                  </g>
+
+                  <!-- FACE 5: SURPRISED (O.O) -->
+                  <g id="catFaceSurprised" class="cat-face-group" style="display: none;">
+                    <circle cx="76" cy="94" r="18" fill="#ff1e27"/>
+                    <circle cx="76" cy="94" r="13" fill="#0a0810"/>
+                    <circle cx="70" cy="87" r="6" fill="#fff"/>
+                    <circle cx="124" cy="94" r="18" fill="#ff1e27"/>
+                    <circle cx="124" cy="94" r="13" fill="#0a0810"/>
+                    <circle cx="118" cy="87" r="6" fill="#fff"/>
+                    <ellipse cx="100" cy="133" rx="5.5" ry="7" fill="#ff4d6d" stroke="#0a0810" stroke-width="2"/>
+                  </g>
+
+                  <!-- Collar (Crimson Red + Chrome Studs) -->
+                  <path d="M 46 155 Q 100 167 154 155 Q 152 171 100 177 Q 48 171 46 155 Z" fill="#dc2626" stroke="#881337" stroke-width="2"/>
+                  <circle cx="60" cy="162" r="3.5" fill="#ffffff" stroke="#881337" stroke-width="1"/>
+                  <circle cx="100" cy="166" r="3" fill="#ffffff" stroke="#881337" stroke-width="1"/>
+                  <circle cx="140" cy="162" r="3.5" fill="#ffffff" stroke="#881337" stroke-width="1"/>
+
+                  <!-- Bell (Liquid Chrome Silver) -->
+                  <line x1="100" y1="177" x2="100" y2="186" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M 92 186 Q 90 194 94 199 Q 100 203 106 199 Q 110 194 108 186 Z" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+                  <ellipse cx="100" cy="186" rx="8.5" ry="3.8" fill="#cbd5e1" stroke="#475569" stroke-width="1.4"/>
+                  <circle cx="95.5" cy="190" r="2" fill="#fff" opacity="0.8"/>
+                </g>
+              </svg>
             </div>
 
           </div>
@@ -2318,6 +2416,5 @@
 
   <!-- Scripts -->
   <script src="script.js?v=4.2"></script>
-  <div class="web-marker">Web Marker © Yukie</div>
 </body>
 </html>

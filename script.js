@@ -104,6 +104,77 @@ function sfxSweep() {
   });
 }
 
+function sfxCatMeow() {
+  if (!sfxEnabled) return;
+  try {
+    const ctx = getAudioContext();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'triangle';
+    const t = ctx.currentTime;
+    // Sweet kitten meow pitch curve
+    osc.frequency.setValueAtTime(540, t);
+    osc.frequency.exponentialRampToValueAtTime(920, t + 0.12);
+    osc.frequency.exponentialRampToValueAtTime(460, t + 0.38);
+
+    gain.gain.setValueAtTime(0.001, t);
+    gain.gain.linearRampToValueAtTime(0.18, t + 0.08);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(t);
+    osc.stop(t + 0.42);
+  } catch (e) {}
+}
+
+function sfxCatChirp() {
+  if (!sfxEnabled) return;
+  try {
+    const ctx = getAudioContext();
+    const t = ctx.currentTime;
+    [
+      { freqStart: 640, freqEnd: 880, start: 0, dur: 0.1 },
+      { freqStart: 820, freqEnd: 1150, start: 0.09, dur: 0.12 }
+    ].forEach(note => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(note.freqStart, t + note.start);
+      osc.frequency.exponentialRampToValueAtTime(note.freqEnd, t + note.start + note.dur);
+      gain.gain.setValueAtTime(0.001, t + note.start);
+      gain.gain.linearRampToValueAtTime(0.16, t + note.start + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + note.start + note.dur);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(t + note.start);
+      osc.stop(t + note.start + note.dur);
+    });
+  } catch (e) {}
+}
+
+function sfxCatPurr() {
+  if (!sfxEnabled) return;
+  try {
+    const ctx = getAudioContext();
+    const t = ctx.currentTime;
+    [680, 880, 1080].forEach((freq, idx) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, t + idx * 0.06);
+      gain.gain.setValueAtTime(0.12, t + idx * 0.06);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + idx * 0.06 + 0.1);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(t + idx * 0.06);
+      osc.stop(t + idx * 0.06 + 0.1);
+    });
+  } catch (e) {}
+}
+
 function initAudioSFX() {
   const toggleBtn = document.getElementById('sfxToggleBtn');
   if (toggleBtn) {
@@ -310,98 +381,76 @@ function initPhoneSimulator() {
 }
 
 /* ==========================================================================
-   3b. RETRO CHIBI PIXEL ART INTERACTION ENGINE
+   3b. INTERACTIVE CAT MASCOT (SOUNDS & EXPRESSION SWITCHER, ZERO TEXT)
    ========================================================================== */
-function initChibiPhone() {
+function initInteractiveCat() {
   const avatarWrapper = document.getElementById('chibiAvatarWrapper');
-  const speechBubble = document.getElementById('phoneStatusBubble');
-  const moodBadge = document.getElementById('chibiMoodBadge');
-  const screenBody = document.getElementById('heroChibiStage') || document.body;
-  const loveBtn = document.getElementById('phoneLoveBtn');
+  if (!avatarWrapper) return;
 
-  if (!avatarWrapper && !speechBubble) return;
+  const faceIds = ['catFaceNormal', 'catFaceHappy', 'catFaceWink', 'catFaceLove', 'catFaceSurprised'];
+  let currentFaceIndex = 0;
+  let resetFaceTimer = null;
+  const sfxFuncs = [sfxCatMeow, sfxCatChirp, sfxCatPurr];
+  let sfxIdx = 0;
 
-  const dialogues = [
-    { text: "Hello! I'm Yukie ✦ Welcome to the dark lab. (Click me!)", mood: 'DARK LAB ● AI ⚡' },
-    { text: 'Vibing to heavy bass & dark synth while optimizing deep neural nets 🎧', mood: 'DARK SYNTH 🖤' },
-    { text: 'Wanna listen to my corporate voiceover & commercial reel? 🎙️', mood: 'VOICE OVER 🎙️' },
-    { text: "Let's engineer bleeding-edge AI models together 🦇", mood: 'BUILDING TECH ⚡' },
-    { text: 'Open for high-impact creative & tech inquiries 🩸', mood: 'READY TO BUILD ✦' }
-  ];
+  function showFace(faceId) {
+    faceIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = (id === faceId) ? 'block' : 'none';
+    });
+  }
 
-  let currentDialogueIdx = 0;
+  function spawnCatParticle(x, y) {
+    const emojis = ['🐾', '💖', '✨', '🌸', '✦', '🐾'];
+    const p = document.createElement('span');
+    p.className = 'cat-particle';
+    p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    p.style.left = `${x || 30}px`;
+    p.style.top = `${y || -10}px`;
+    p.style.setProperty('--tx', `${(Math.random() - 0.5) * 55}px`);
+    p.style.setProperty('--ty', `-${35 + Math.random() * 45}px`);
+    avatarWrapper.appendChild(p);
+    setTimeout(() => p.remove(), 950);
+  }
 
-  function triggerChibiReaction(customText) {
-    // 1. Play sound effect
-    sfxClick();
-
-    // 2. Animate jump
-    if (avatarWrapper) {
-      avatarWrapper.classList.remove('chibi-jump');
-      void avatarWrapper.offsetWidth; // force reflow
-      avatarWrapper.classList.add('chibi-jump');
-      setTimeout(() => avatarWrapper.classList.remove('chibi-jump'), 600);
+  function interactCat(e) {
+    if (e) {
+      if (e.cancelable && e.type === 'touchstart') e.preventDefault();
+      e.stopPropagation();
     }
 
-    // 3. Spawn floating dark particles
-    spawnChibiHearts();
+    // 1. Play cute synthesized cat sounds (Meow, Chirp, Purr)
+    try {
+      sfxFuncs[sfxIdx % sfxFuncs.length]();
+      sfxIdx++;
+    } catch (err) {}
 
-    // 4. Update dialogue text
-    if (customText && speechBubble) {
-      speechBubble.textContent = customText;
-    } else {
-      currentDialogueIdx = (currentDialogueIdx + 1) % dialogues.length;
-      const item = dialogues[currentDialogueIdx];
-      if (speechBubble) speechBubble.textContent = item.text;
-      if (moodBadge) moodBadge.textContent = item.mood;
-    }
+    // 2. Cycle to next cute face expression
+    currentFaceIndex = (currentFaceIndex % (faceIds.length - 1)) + 1;
+    showFace(faceIds[currentFaceIndex]);
+
+    // 3. Jump animation
+    avatarWrapper.classList.remove('chibi-jump');
+    void avatarWrapper.offsetWidth; // trigger reflow
+    avatarWrapper.classList.add('chibi-jump');
+    setTimeout(() => avatarWrapper.classList.remove('chibi-jump'), 500);
+
+    // 4. Spawn cute floating particle (paw, heart, sparkle)
+    spawnCatParticle(Math.random() * 35 + 10, -5);
+
+    // 5. Reset to normal face after 2.4s idle
+    clearTimeout(resetFaceTimer);
+    resetFaceTimer = setTimeout(() => {
+      showFace('catFaceNormal');
+      currentFaceIndex = 0;
+    }, 2400);
   }
 
-  function spawnChibiHearts() {
-    const stage = document.getElementById('heroChibiStage') || document.body;
-    const emojis = ['🖤', '⚡', '🦇', '💀', '🩸', '🕷️', '🗡️', '✦'];
-    for (let i = 0; i < 5; i++) {
-      const p = document.createElement('span');
-      p.className = 'chibi-heart-particle';
-      p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-      p.style.left = `${46 + (Math.random() * 16 - 8)}%`;
-      p.style.top = `${40 + (Math.random() * 12)}%`;
-      p.style.setProperty('--tx', `${(Math.random() - 0.5) * 110}px`);
-      p.style.setProperty('--ty', `-${50 + Math.random() * 65}px`);
-      stage.appendChild(p);
-      setTimeout(() => p.remove(), 900);
-    }
-  }
-
-  // Click listeners
-  if (avatarWrapper) {
-    avatarWrapper.addEventListener('click', (e) => {
-      e.stopPropagation();
-      triggerChibiReaction();
-    });
-  }
-
-  if (speechBubble) {
-    speechBubble.addEventListener('click', (e) => {
-      e.stopPropagation();
-      triggerChibiReaction();
-    });
-  }
-
-  if (moodBadge) {
-    moodBadge.addEventListener('click', (e) => {
-      e.stopPropagation();
-      triggerChibiReaction();
-    });
-  }
-
-  // Hook up phoneLoveBtn
-  if (loveBtn) {
-    loveBtn.addEventListener('click', () => {
-      triggerChibiReaction('Stay sharp & stay fearless! 🖤 ✦');
-    });
-  }
+  avatarWrapper.addEventListener('click', interactCat);
+  avatarWrapper.addEventListener('touchstart', interactCat, { passive: false });
 }
+
+const initChibiPhone = initInteractiveCat;
 
 /* ==========================================================================
    4. INTERACTIVE CHIBI MOOD FILTER SWITCHER

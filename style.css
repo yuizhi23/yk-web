@@ -1176,10 +1176,51 @@ section {
   align-items: flex-end;
   cursor: pointer;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .punk-chibi-badge:hover {
   transform: scale(1.12) rotate(3deg);
+}
+
+.punk-chibi-badge:active {
+  transform: scale(0.92) rotate(-2deg);
+}
+
+.punk-chibi-badge.chibi-jump {
+  animation: catBounceJump 0.45s ease forwards;
+}
+
+@keyframes catBounceJump {
+  0%   { transform: translateY(0px) scale(1, 1); }
+  30%  { transform: translateY(-16px) scale(0.92, 1.12) rotate(-5deg); }
+  60%  { transform: translateY(-4px) scale(1.08, 0.94) rotate(4deg); }
+  85%  { transform: translateY(-1px) scale(0.98, 1.02); }
+  100% { transform: translateY(0px) scale(1, 1); }
+}
+
+.cat-particle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.15rem;
+  z-index: 100;
+  user-select: none;
+  animation: floatCatParticle 0.85s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes floatCatParticle {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.5);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(var(--tx, 0px), var(--ty, -28px)) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx, 0px), var(--ty, -52px)) scale(0.8);
+  }
 }
 
 .punk-chibi-sticker-img {
@@ -5881,19 +5922,4 @@ footer {
 @keyframes eqJump {
   0% { height: 3px; }
   100% { height: 12px; }
-}
-
-
-.web-marker {
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  font-size: 0.8rem;
-  color: #94a3b8;
-  background: rgba(18, 18, 24, 0.85);
-  border: 1px solid #333346;
-  padding: 4px 8px;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
-  z-index: 9999;
 }
