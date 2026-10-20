@@ -656,40 +656,153 @@ section {
 
 @media (max-width: 768px) {
   .punk-hero-editorial-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    justify-items: flex-start;
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    gap: 0.65rem !important;
+    align-items: center !important;
   }
   .punk-hero-text-col {
-    align-items: flex-start;
-    text-align: left;
-    width: 100%;
+    display: contents !important;
+  }
+  .punk-hero-headline-block {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-width: 0 !important;
+    z-index: 5 !important;
   }
   .punk-taped-label {
-    transform: rotate(-1.5deg);
-    align-self: flex-start;
+    font-size: 0.62rem !important;
+    padding: 2px 6px !important;
+    letter-spacing: 0.02em !important;
+    box-shadow: 2px 2px 0px #000 !important;
+    margin-bottom: 0.35rem !important;
+    transform: rotate(-1.5deg) !important;
+    align-self: flex-start !important;
+    white-space: nowrap !important;
   }
   .punk-hero-giant-name {
-    font-size: clamp(2.8rem, 11.5vw, 4.2rem);
-    text-align: left;
-    transform: rotate(-1.2deg);
-    line-height: 0.92;
-    margin-bottom: 0.85rem;
+    font-size: clamp(1.85rem, 7.6vw, 2.7rem) !important;
+    text-align: left !important;
+    transform: rotate(-1.2deg) !important;
+    line-height: 0.88 !important;
+    margin-bottom: 0.45rem !important;
+    letter-spacing: -0.02em !important;
   }
+  .punk-role-stamp-bar {
+    gap: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+    flex-wrap: wrap !important;
+  }
+  .hero-typewriter-tag {
+    font-size: 0.72rem !important;
+    padding: 2px 6px !important;
+    max-width: 100% !important;
+  }
+  .punk-rubber-stamp-mini {
+    font-size: 0.58rem !important;
+    padding: 1px 4px !important;
+  }
+
+  /* Right Column: Photo right beside Yukie Kiyoshi */
+  .punk-hero-stage-col {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    z-index: 4 !important;
+  }
+  .punk-cutout-collage-wrap {
+    max-width: 175px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .punk-cutout-img {
+    max-height: 220px !important;
+    width: 100% !important;
+    object-fit: contain !important;
+  }
+  .punk-paper-tag.tag-award {
+    right: -4px !important;
+    top: 2% !important;
+    font-size: 0.55rem !important;
+    padding: 1px 4px !important;
+    white-space: nowrap !important;
+  }
+  .punk-paper-tag.tag-sub {
+    left: -4px !important;
+    bottom: 5% !important;
+    font-size: 0.52rem !important;
+    padding: 1px 4px !important;
+    white-space: nowrap !important;
+  }
+  .punk-rubber-stamp-seal {
+    left: -8px !important;
+    top: 8% !important;
+    transform: scale(0.62) rotate(-12deg) !important;
+  }
+  .punk-handwritten-scribble {
+    top: -16px !important;
+    left: 4px !important;
+    font-size: 0.78rem !important;
+  }
+  .punk-chibi-badge {
+    bottom: -8px !important;
+    right: -4px !important;
+  }
+  .punk-chibi-sticker-img {
+    width: 52px !important;
+  }
+  .punk-speech-pill {
+    font-size: 0.6rem !important;
+    padding: 1px 4px !important;
+    transform: rotate(-3deg) translateY(-14px) !important;
+  }
+
+  /* Below side-by-side header: Manifesto & Buttons */
   .punk-manifesto-card {
-    transform: rotate(0.8deg);
-    max-width: 100%;
-    text-align: left;
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    transform: rotate(0.8deg) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1rem 0.85rem !important;
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.65rem !important;
+  }
+  .manifesto-lead {
+    font-size: 0.98rem !important;
+    line-height: 1.25 !important;
+  }
+  .manifesto-body {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
   }
   .punk-hero-actions {
-    justify-content: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.65rem;
+    grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 0.45rem !important;
+    margin-bottom: 0.75rem !important;
   }
-  .punk-visual-frame-wrapper {
-    max-width: 310px;
-    margin: 1.25rem auto 0 auto;
+  .punk-action-ticket {
+    width: auto !important;
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.82rem !important;
+  }
+  .punk-quick-pills {
+    grid-column: 1 / -1 !important;
+    grid-row: 4 !important;
   }
 }
 
@@ -3202,15 +3315,21 @@ footer {
     padding: 0.2rem 0.55rem;
   }
 
-  /* About Panel */
+  /* About Panel: Zero Horizontal Overflow */
   .about-panel {
-    padding: 1.5rem 1.1rem;
+    padding: 1.25rem 0.85rem !important;
     border-radius: 20px;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
   .about-row {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 1.35rem;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
   }
   .about-photo-card {
     max-width: 195px;
@@ -3235,23 +3354,48 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
+  .about-details-content {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
+  }
   .about-details-content h3 {
     font-size: 1.25rem;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
   }
   .about-desc-text {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.25rem;
     text-align: left;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
   }
   .about-info-tags {
-    justify-content: center;
-    gap: 0.35rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.45rem !important;
     margin-bottom: 1.25rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .info-pill {
-    font-size: 1.05rem;
-    padding: 0.25rem 0.65rem;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 0.82rem !important;
+    padding: 0.35rem 0.65rem !important;
+    text-align: left !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
   .about-cta-btns {
     justify-content: center;
@@ -3706,84 +3850,136 @@ footer {
 
 /* SMARTPHONE & PHABLET (MAX-WIDTH: 640PX) */
 @media (max-width: 640px) {
-  /* Hero Section: Left-aligned editorial punk layout just like laptop */
+  /* Hero Section: Side-by-side header (Left: Name, Right: Photo) like laptop preview */
   .punk-hero-editorial-grid {
-    gap: 1.75rem !important;
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    gap: 0.5rem !important;
+    align-items: center !important;
+  }
+  .punk-hero-text-col {
+    display: contents !important;
+  }
+  .punk-hero-headline-block {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-width: 0 !important;
+    z-index: 5 !important;
   }
   .punk-hero-giant-name {
-    font-size: clamp(2.5rem, 11vw, 3.6rem) !important;
+    font-size: clamp(1.8rem, 7.5vw, 2.5rem) !important;
     text-align: left !important;
     transform: rotate(-1.2deg) !important;
-    margin-bottom: 0.85rem !important;
-    line-height: 0.92 !important;
+    margin-bottom: 0.35rem !important;
+    line-height: 0.88 !important;
+  }
+  .punk-taped-label {
+    font-size: 0.58rem !important;
+    padding: 2px 5px !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 0.25rem !important;
+    white-space: nowrap !important;
+  }
+  .punk-hero-stage-col {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    z-index: 4 !important;
+  }
+  .punk-cutout-collage-wrap {
+    max-width: 160px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .punk-cutout-img {
+    max-height: 200px !important;
+    width: 100% !important;
+    object-fit: contain !important;
   }
   .punk-manifesto-card {
-    padding: 1.15rem 1rem !important;
-    box-shadow: 4px 4px 0px #000 !important;
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    padding: 0.95rem 0.8rem !important;
+    box-shadow: 3.5px 3.5px 0px #000 !important;
     transform: rotate(0.8deg) !important;
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     text-align: left !important;
+    margin-top: 0.65rem !important;
+    margin-bottom: 0.65rem !important;
   }
   .manifesto-lead {
-    font-size: 1.08rem !important;
-    line-height: 1.3 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.25 !important;
   }
   .manifesto-body {
-    font-size: 0.88rem !important;
-    line-height: 1.5 !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
   }
   .punk-hero-actions {
-    width: 100%;
+    grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+    width: 100% !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: flex-start !important;
-    gap: 0.55rem !important;
-    margin-bottom: 1.25rem !important;
+    gap: 0.45rem !important;
+    margin-bottom: 0.65rem !important;
   }
   .punk-action-ticket {
     width: auto !important;
     justify-content: flex-start;
-    padding: 0.45rem 0.85rem !important;
-    font-size: 0.88rem !important;
+    padding: 0.38rem 0.75rem !important;
+    font-size: 0.8rem !important;
     transform: rotate(-0.8deg) !important;
   }
-  .punk-visual-frame-wrapper {
-    max-width: 290px !important;
-    margin: 1rem auto 0 auto !important;
+  .punk-quick-pills {
+    grid-column: 1 / -1 !important;
+    grid-row: 4 !important;
   }
   .punk-paper-tag.tag-award {
-    right: -6px !important;
-    top: 3% !important;
-    font-size: 0.72rem !important;
-    padding: 0.2rem 0.55rem !important;
+    right: -4px !important;
+    top: 2% !important;
+    font-size: 0.52rem !important;
+    padding: 1px 4px !important;
+    white-space: nowrap !important;
   }
   .punk-paper-tag.tag-sub {
-    left: -6px !important;
-    bottom: 8% !important;
-    font-size: 0.7rem !important;
-    padding: 0.2rem 0.55rem !important;
+    left: -4px !important;
+    bottom: 5% !important;
+    font-size: 0.5rem !important;
+    padding: 1px 4px !important;
+    white-space: nowrap !important;
   }
   .punk-rubber-stamp-seal {
     left: -6px !important;
-    top: 14% !important;
-    transform: scale(0.78) rotate(-12deg) !important;
+    top: 8% !important;
+    transform: scale(0.58) rotate(-12deg) !important;
   }
   .punk-handwritten-scribble {
-    top: -20px !important;
-    left: 8px !important;
-    font-size: 0.92rem !important;
+    top: -15px !important;
+    left: 4px !important;
+    font-size: 0.74rem !important;
   }
   .punk-chibi-badge {
-    bottom: -15px !important;
-    right: -6px !important;
+    bottom: -8px !important;
+    right: -4px !important;
   }
   .punk-chibi-sticker-img {
-    width: 68px !important;
+    width: 48px !important;
   }
   .punk-speech-pill {
-    font-size: 0.7rem !important;
-    padding: 2px 6px !important;
-    transform: rotate(-3deg) translateY(-20px) !important;
+    font-size: 0.58rem !important;
+    padding: 1px 4px !important;
+    transform: rotate(-3deg) translateY(-12px) !important;
   }
 
   /* 2-Column Balanced Grid for Projects (Like Laptop Folder Grid) */
@@ -3972,16 +4168,16 @@ footer {
   }
 
   .punk-chibi-badge {
-    bottom: -10px;
-    right: 5px;
+    bottom: -8px !important;
+    right: -4px !important;
   }
   .punk-chibi-sticker-img {
-    width: 75px;
+    width: 48px !important;
   }
   .punk-speech-pill {
-    font-size: 0.75rem;
-    padding: 2px 8px;
-    transform: rotate(-3deg) translateY(-20px);
+    font-size: 0.58rem !important;
+    padding: 1px 4px !important;
+    transform: rotate(-3deg) translateY(-12px) !important;
   }
 
   /* Cyber Phone Screen on Small Mobile */
