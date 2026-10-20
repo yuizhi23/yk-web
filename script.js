@@ -322,12 +322,11 @@ function initChibiPhone() {
   if (!avatarWrapper && !speechBubble) return;
 
   const dialogues = [
-    { text: "Hello! I'm Yukie ✦ Lovely to meet you! (Click me!)", mood: 'coding AI 🤖' },
-    { text: 'Vibing to smooth R&B grooves while debugging ML models 🎧', mood: 'vibing to R&B 🎧' },
-    { text: 'Wanna listen to my commercial voiceover samples? 🎙️', mood: 'voice acting 🎙️' },
-
-    { text: "Let's collaborate on awesome tech projects! 🚀", mood: 'building tech 💻' },
-    { text: 'Hire me maybe? :3 💖', mood: 'ready to work 🌟' }
+    { text: "Hello! I'm Yukie ✦ Welcome to the dark lab. (Click me!)", mood: 'DARK LAB ● AI ⚡' },
+    { text: 'Vibing to heavy bass & dark synth while optimizing deep neural nets 🎧', mood: 'DARK SYNTH 🖤' },
+    { text: 'Wanna listen to my corporate voiceover & commercial reel? 🎙️', mood: 'VOICE OVER 🎙️' },
+    { text: "Let's engineer bleeding-edge AI models together 🦇", mood: 'BUILDING TECH ⚡' },
+    { text: 'Open for high-impact creative & tech inquiries 🩸', mood: 'READY TO BUILD ✦' }
   ];
 
   let currentDialogueIdx = 0;
@@ -344,7 +343,7 @@ function initChibiPhone() {
       setTimeout(() => avatarWrapper.classList.remove('chibi-jump'), 600);
     }
 
-    // 3. Spawn floating heart particles
+    // 3. Spawn floating dark particles
     spawnChibiHearts();
 
     // 4. Update dialogue text
@@ -360,7 +359,7 @@ function initChibiPhone() {
 
   function spawnChibiHearts() {
     const stage = document.getElementById('heroChibiStage') || document.body;
-    const emojis = ['💖', '✨', '⭐', '🌸'];
+    const emojis = ['🖤', '⚡', '🦇', '💀', '🩸', '🕷️', '🗡️', '✦'];
     for (let i = 0; i < 5; i++) {
       const p = document.createElement('span');
       p.className = 'chibi-heart-particle';
@@ -399,7 +398,7 @@ function initChibiPhone() {
   // Hook up phoneLoveBtn
   if (loveBtn) {
     loveBtn.addEventListener('click', () => {
-      triggerChibiReaction('Thanks for the love! 💖 (⁄ ⁄•⁄ω⁄•⁄ ⁄)');
+      triggerChibiReaction('Stay sharp & stay fearless! 🖤 ✦');
     });
   }
 }
@@ -514,13 +513,13 @@ function initFortuneBox() {
   const text = document.getElementById('fortuneText');
 
   const quotes = [
-    '"Your voice is your superpower — dare to build, speak, and inspire with soul! ✦"',
-    '"Great code solves problems, but great storytelling connects hearts 💖"',
-    '"Continuous learning is the highest form of creative empowerment 🚀"',
-    '"Turning coffee into clean algorithms and expressive audio reels ☕"',
-    '"Informatics by day, voice actor by night — why choose when you can excel at both! 🎙️"',
-    '"Believe in your creative journey. The next big milestone is already loading... ✨"',
-    '"Kindness in communication is as impactful as precision in code 🌟"'
+    '"let her cook, trust the process & drink your iced coffee ☕"',
+    '"lowkey cooking something crazy, highkey need another matcha latte 🍵"',
+    '"certified yap session specialist & nocturnal creative coder 🎙️"',
+    '"running on pure caffeine, clean code, and immaculate vibes ✨"',
+    '"always cooking, never cooked. pushing code straight to prod 🔥"',
+    '"it’s giving high honors, creative genius & zero bugs 💅"',
+    '"keep it chill, keep it real, and let the algorithm do the heavy lifting 🎧"'
   ];
 
   if (btn && text) {
