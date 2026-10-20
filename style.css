@@ -179,8 +179,18 @@ body {
   .chibi-retro-glow { display: none !important; }
 
   body {
-    background: #08080a !important;
-    background-image: none !important;
+    background: radial-gradient(circle at 50% 12%, #cf1d26 0%, #b2141c 45%, #880e14 85%, #58080c 100%) !important;
+    background-color: #a81319 !important;
+    background-attachment: scroll !important;
+  }
+
+  /* Critical Mobile Optimization: disable fixed SVG halftone overlay & heavy marquee to free GPU */
+  .halftone-bg {
+    display: none !important;
+  }
+
+  .punk-bg-marquee {
+    display: none !important;
   }
 
   .chibi-pixel-img {
@@ -644,36 +654,42 @@ section {
   position: relative;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .punk-hero-editorial-grid {
     grid-template-columns: 1fr;
-    gap: 2.75rem;
-    justify-items: center;
+    gap: 2rem;
+    justify-items: flex-start;
   }
   .punk-hero-text-col {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     width: 100%;
   }
   .punk-taped-label {
-    transform: rotate(-1deg);
+    transform: rotate(-1.5deg);
+    align-self: flex-start;
   }
   .punk-hero-giant-name {
-    font-size: clamp(3.2rem, 11vw, 5.2rem);
-    text-align: center;
-    transform: rotate(-1deg);
+    font-size: clamp(2.8rem, 11.5vw, 4.2rem);
+    text-align: left;
+    transform: rotate(-1.2deg);
+    line-height: 0.92;
+    margin-bottom: 0.85rem;
   }
   .punk-manifesto-card {
-    transform: rotate(0deg);
+    transform: rotate(0.8deg);
     max-width: 100%;
     text-align: left;
   }
   .punk-hero-actions {
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.65rem;
   }
   .punk-visual-frame-wrapper {
-    max-width: 380px;
-    margin: 0 auto;
+    max-width: 310px;
+    margin: 1.25rem auto 0 auto;
   }
 }
 
@@ -3690,137 +3706,165 @@ footer {
 
 /* SMARTPHONE & PHABLET (MAX-WIDTH: 640PX) */
 @media (max-width: 640px) {
-  /* Hero Section: Clean, Centered, Zero Horizontal Overflow */
+  /* Hero Section: Left-aligned editorial punk layout just like laptop */
   .punk-hero-editorial-grid {
-    gap: 2.25rem !important;
+    gap: 1.75rem !important;
   }
   .punk-hero-giant-name {
-    font-size: clamp(2.8rem, 12.5vw, 4rem) !important;
-    text-align: center;
-    transform: none !important;
-    margin-bottom: 1rem !important;
+    font-size: clamp(2.5rem, 11vw, 3.6rem) !important;
+    text-align: left !important;
+    transform: rotate(-1.2deg) !important;
+    margin-bottom: 0.85rem !important;
+    line-height: 0.92 !important;
   }
   .punk-manifesto-card {
-    padding: 1.25rem 1.15rem !important;
+    padding: 1.15rem 1rem !important;
     box-shadow: 4px 4px 0px #000 !important;
-    transform: none !important;
+    transform: rotate(0.8deg) !important;
     width: 100% !important;
+    text-align: left !important;
   }
   .manifesto-lead {
-    font-size: 1.2rem !important;
-    line-height: 1.25 !important;
+    font-size: 1.08rem !important;
+    line-height: 1.3 !important;
   }
   .manifesto-body {
-    font-size: 0.92rem !important;
-    line-height: 1.55 !important;
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
   }
   .punk-hero-actions {
     width: 100%;
-    flex-direction: column;
-    gap: 0.65rem;
-    margin-bottom: 1.5rem;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 0.55rem !important;
+    margin-bottom: 1.25rem !important;
   }
   .punk-action-ticket {
-    width: 100%;
-    justify-content: center;
-    padding: 0.75rem 1.25rem;
-    font-size: 1.05rem;
-    transform: none !important;
+    width: auto !important;
+    justify-content: flex-start;
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.88rem !important;
+    transform: rotate(-0.8deg) !important;
   }
   .punk-visual-frame-wrapper {
-    max-width: 310px !important;
-    margin: 0 auto !important;
+    max-width: 290px !important;
+    margin: 1rem auto 0 auto !important;
   }
   .punk-paper-tag.tag-award {
     right: -6px !important;
     top: 3% !important;
-    font-size: 0.75rem !important;
-    padding: 0.22rem 0.6rem !important;
+    font-size: 0.72rem !important;
+    padding: 0.2rem 0.55rem !important;
   }
   .punk-paper-tag.tag-sub {
     left: -6px !important;
     bottom: 8% !important;
-    font-size: 0.72rem !important;
-    padding: 0.22rem 0.6rem !important;
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.55rem !important;
   }
   .punk-rubber-stamp-seal {
     left: -6px !important;
     top: 14% !important;
-    transform: scale(0.8) rotate(-12deg) !important;
+    transform: scale(0.78) rotate(-12deg) !important;
   }
   .punk-handwritten-scribble {
     top: -20px !important;
     left: 8px !important;
-    font-size: 0.95rem !important;
+    font-size: 0.92rem !important;
   }
   .punk-chibi-badge {
     bottom: -15px !important;
     right: -6px !important;
   }
   .punk-chibi-sticker-img {
-    width: 72px !important;
+    width: 68px !important;
   }
   .punk-speech-pill {
-    font-size: 0.72rem !important;
-    padding: 2px 7px !important;
+    font-size: 0.7rem !important;
+    padding: 2px 6px !important;
     transform: rotate(-3deg) translateY(-20px) !important;
   }
 
-  /* Single Column Full-Width Cards for High Readability on Smartphone */
+  /* 2-Column Balanced Grid for Projects (Like Laptop Folder Grid) */
   .projects-3col-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
   }
   .proj-folder-card {
-    padding: 1.4rem 1.25rem !important;
-    border-radius: 14px !important;
+    padding: 0.95rem 0.8rem !important;
+    border-radius: 10px !important;
+    box-shadow: 2.5px 2.5px 0px #000 !important;
+    border-width: 2px !important;
     transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  .proj-cat-badge {
+    font-size: 0.68rem !important;
+    padding: 0.1rem 0.45rem !important;
+    margin-bottom: 0.35rem !important;
   }
   .proj-heading {
-    font-size: 1.25rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.45rem !important;
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.3rem !important;
   }
   .proj-desc-text {
-    font-size: 0.92rem !important;
-    line-height: 1.55 !important;
+    font-size: 0.76rem !important;
+    line-height: 1.35 !important;
     color: #1e1e24 !important;
-    display: block !important;
-    -webkit-line-clamp: unset !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
   }
   .proj-tags-list {
-    gap: 0.35rem !important;
-    margin-top: 0.75rem !important;
+    gap: 0.25rem !important;
+    margin-top: 0.5rem !important;
   }
   .proj-tag-item {
-    font-size: 0.78rem !important;
-    padding: 0.15rem 0.5rem !important;
+    font-size: 0.65rem !important;
+    padding: 0.1rem 0.4rem !important;
   }
 
+  /* 2-Column Balanced Grid for Experience (Like Laptop Grid) */
   .exp-cards-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
   }
   .exp-item-card {
-    padding: 1.35rem 1.25rem !important;
-    border-radius: 14px !important;
+    padding: 0.95rem 0.8rem !important;
+    border-radius: 10px !important;
+    box-shadow: 2.5px 2.5px 0px #000 !important;
+    border-width: 2px !important;
     transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
   }
   .exp-role-title {
-    font-size: 1.15rem !important;
-    line-height: 1.25 !important;
+    font-size: 0.92rem !important;
+    line-height: 1.2 !important;
     width: 100% !important;
   }
   .exp-company-sub {
-    font-size: 0.92rem !important;
-    margin-bottom: 0.5rem !important;
+    font-size: 0.76rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+  .exp-date-tag {
+    font-size: 0.66rem !important;
+    padding: 0.1rem 0.45rem !important;
   }
   .exp-item-card p {
-    font-size: 0.92rem !important;
-    line-height: 1.55 !important;
+    font-size: 0.75rem !important;
+    line-height: 1.35 !important;
     color: #cbd5e1 !important;
-    display: block !important;
-    -webkit-line-clamp: unset !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
   }
 
   .reels-grid {
@@ -4033,8 +4077,8 @@ footer {
   }
   .exp-cards-grid,
   .projects-3col-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.15rem !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
   }
 
   /* 2-column Compact Grid for Reels on Mobile */
@@ -4119,7 +4163,7 @@ footer {
   }
   .exp-item-card,
   .proj-folder-card {
-    padding: 1.25rem 1.1rem !important;
+    padding: 0.85rem 0.75rem !important;
   }
   .about-photo-card {
     max-width: 165px;
