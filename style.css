@@ -707,6 +707,7 @@ section {
   }
 
   /* Right Column: Photo right beside Yukie Kiyoshi */
+  /* Right Column: Photo right beside Yukie Kiyoshi */
   .punk-hero-stage-col {
     grid-column: 2 !important;
     grid-row: 1 !important;
@@ -715,17 +716,24 @@ section {
     align-items: center !important;
     min-width: 0 !important;
     margin: 0 !important;
-    z-index: 4 !important;
+    position: relative !important;
+    z-index: 25 !important;
   }
   .punk-cutout-collage-wrap {
     max-width: 175px !important;
     width: 100% !important;
     margin: 0 auto !important;
+    position: relative !important;
+    overflow: visible !important;
   }
   .punk-cutout-img {
     max-height: 220px !important;
     width: 100% !important;
     object-fit: contain !important;
+  }
+  /* Tape on tiny mobile tags: hide completely so letters are 100% visible */
+  .punk-paper-tag .tape-strip {
+    display: none !important;
   }
   .punk-paper-tag.tag-award {
     right: -4px !important;
@@ -751,17 +759,25 @@ section {
     left: 4px !important;
     font-size: 0.78rem !important;
   }
+  /* Cat Mascot Sticker — Stays elevated on top layer, never covered */
   .punk-chibi-badge {
-    bottom: -8px !important;
+    position: absolute !important;
+    bottom: 4px !important;
     right: -4px !important;
+    z-index: 60 !important;
+    display: flex !important;
+    align-items: flex-end !important;
   }
   .punk-chibi-sticker-img {
-    width: 52px !important;
+    width: 56px !important;
+    height: auto !important;
+    filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.8)) !important;
   }
   .punk-speech-pill {
     font-size: 0.6rem !important;
-    padding: 1px 4px !important;
-    transform: rotate(-3deg) translateY(-14px) !important;
+    padding: 1px 5px !important;
+    transform: rotate(-3deg) translateY(-8px) !important;
+    z-index: 61 !important;
   }
 
   /* Below side-by-side header: Manifesto & Buttons */
@@ -773,8 +789,10 @@ section {
     max-width: 100% !important;
     box-sizing: border-box !important;
     padding: 1rem 0.85rem !important;
-    margin-top: 0.75rem !important;
+    margin-top: 1.2rem !important;
     margin-bottom: 0.65rem !important;
+    position: relative !important;
+    z-index: 5 !important;
   }
   .manifesto-lead {
     font-size: 0.98rem !important;
@@ -859,22 +877,46 @@ section {
   margin-top: 0.04em;
 }
 
-/* Masking Tape Utility */
+/* Masking Tape Utility — Translucent, Subtle & Positioned so it NEVER Covers Letters */
 .tape-strip {
   position: absolute;
-  width: 52px;
-  height: 18px;
-  background: var(--punk-tape);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  width: 32px;
+  height: 9px;
+  background: rgba(250, 245, 218, 0.45);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   pointer-events: none;
-  z-index: 6;
-  border-left: 2px dashed rgba(200, 190, 160, 0.45);
-  border-right: 2px dashed rgba(200, 190, 160, 0.45);
+  z-index: 1;
+  border-left: 1.5px dashed rgba(180, 165, 130, 0.4);
+  border-right: 1.5px dashed rgba(180, 165, 130, 0.4);
 }
 
-.tape-strip.top-left { top: -9px; left: 14px; transform: rotate(-6deg); }
-.tape-strip.top-right { top: -9px; right: 14px; transform: rotate(5deg); }
-.tape-strip.top-center { top: -9px; left: 50%; transform: translateX(-50%) rotate(-2deg); }
+.tape-strip.top-left { top: -8px; left: 8px; transform: rotate(-5deg); }
+.tape-strip.top-right { top: -8px; right: 12px; transform: rotate(5deg); }
+.tape-strip.top-center { top: -8px; left: 50%; transform: translateX(-50%) rotate(-2deg); }
+
+/* Contextual tape rules to guarantee 100% text readability */
+.punk-paper-tag .tape-strip.top-center {
+  top: -8px;
+  height: 8px;
+  width: 22px;
+}
+.punk-taped-label .tape-strip.top-left {
+  top: -7px;
+  left: 6px;
+  width: 20px;
+  height: 8px;
+}
+.punk-manifesto-card .tape-strip.top-right {
+  top: -8px;
+  right: 16px;
+  width: 26px;
+  height: 10px;
+}
+.about-photo-card .tape-strip.top-center {
+  top: -9px;
+  height: 11px;
+  width: 30px;
+}
 
 /* Role Stamp Bar */
 .punk-role-stamp-bar {
@@ -1127,9 +1169,9 @@ section {
 /* Interactive Chibi Mini-Sticker (Positioned at bottom right of cutout frame, zero text obstruction) */
 .punk-chibi-badge {
   position: absolute;
-  bottom: -15px;
-  right: -20px;
-  z-index: 6;
+  bottom: 8px;
+  right: -6px;
+  z-index: 60;
   display: flex;
   align-items: flex-end;
   cursor: pointer;
@@ -3970,16 +4012,18 @@ footer {
     font-size: 0.74rem !important;
   }
   .punk-chibi-badge {
-    bottom: -8px !important;
+    bottom: 4px !important;
     right: -4px !important;
+    z-index: 60 !important;
   }
   .punk-chibi-sticker-img {
-    width: 48px !important;
+    width: 52px !important;
   }
   .punk-speech-pill {
     font-size: 0.58rem !important;
     padding: 1px 4px !important;
-    transform: rotate(-3deg) translateY(-12px) !important;
+    transform: rotate(-3deg) translateY(-8px) !important;
+    z-index: 61 !important;
   }
 
   /* 2-Column Balanced Grid for Projects (Like Laptop Folder Grid) */
@@ -4172,16 +4216,18 @@ footer {
   }
 
   .punk-chibi-badge {
-    bottom: -8px !important;
+    bottom: 4px !important;
     right: -4px !important;
+    z-index: 60 !important;
   }
   .punk-chibi-sticker-img {
-    width: 48px !important;
+    width: 50px !important;
   }
   .punk-speech-pill {
-    font-size: 0.58rem !important;
+    font-size: 0.56rem !important;
     padding: 1px 4px !important;
-    transform: rotate(-3deg) translateY(-12px) !important;
+    transform: rotate(-3deg) translateY(-8px) !important;
+    z-index: 61 !important;
   }
 
   /* Cyber Phone Screen on Small Mobile */
