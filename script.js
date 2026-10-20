@@ -236,12 +236,12 @@ function initPhoneSimulator() {
 
   let currentIdx = 0;
   const messages = [
-    'S1 Informatika • Telkom University 🎓',
-    'AI Engineer & Creative Technologist ✦',
-    'Professional Voice Talent & Narrator 🎙️',
-    'Machine Learning & Software Systems 💻',
-    'Scholar & Student of the Year 2024–2025 🌟',
-    'Articulating Digital Innovation ✦'
+    'S1 Informatika • Telkom University',
+    'AI Engineer & Creative Technologist',
+    'Professional Voice Talent & Narrator',
+    'Machine Learning & Software Systems',
+    'Scholar & Student of the Year 2024–2025',
+    'Articulating Digital Innovation'
   ];
 
   // Ensure all looping videos autoplay muted smoothly and immediately without freeze
@@ -562,19 +562,19 @@ function initFortuneBox() {
   const text = document.getElementById('fortuneText');
 
   const quotes = [
-    '"let her cook, trust the process & drink your iced coffee ☕"',
-    '"lowkey cooking something crazy, highkey need another matcha latte 🍵"',
-    '"certified yap session specialist & nocturnal creative coder 🎙️"',
-    '"running on pure caffeine, clean code, and immaculate vibes ✨"',
-    '"always cooking, never cooked. pushing code straight to prod 🔥"',
-    '"it’s giving high honors, creative genius & zero bugs 💅"',
-    '"keep it chill, keep it real, and let the algorithm do the heavy lifting 🎧"'
+    '"let her cook, trust the process & drink your iced coffee"',
+    '"lowkey cooking something crazy, highkey need another matcha latte"',
+    '"certified yap session specialist & nocturnal creative coder"',
+    '"running on pure caffeine, clean code, and immaculate vibes"',
+    '"always cooking, never cooked. pushing code straight to prod"',
+    '"it’s giving high honors, creative genius & zero bugs"',
+    '"keep it chill, keep it real, and let the algorithm do the heavy lifting"'
   ];
 
   if (btn && text) {
     btn.addEventListener('click', () => {
       sfxChime();
-      btn.textContent = '🎲 Rolling...';
+      btn.textContent = 'Rolling...';
       btn.disabled = true;
 
       let rolls = 0;
@@ -585,7 +585,7 @@ function initFortuneBox() {
           clearInterval(interval);
           const finalQuote = quotes[Math.floor(Math.random() * quotes.length)];
           text.textContent = finalQuote;
-          btn.textContent = '🎲 Spin New Quote!';
+          btn.textContent = 'Spin New Quote!';
           btn.disabled = false;
           const rect = btn.getBoundingClientRect();
           spawnConfetti(rect.left + rect.width / 2, rect.top, 22, ['✨', '🎲', '💖', '🌟', '✦']);
@@ -825,7 +825,7 @@ function initConsoleSearch() {
       sfxChime();
       const rect = btnY.getBoundingClientRect();
       spawnConfetti(rect.left + rect.width / 2, rect.top, 24, ['⭐', '✨', '💖', '🎉', '✦']);
-      if (bubble) bubble.textContent = "✦ BONUS STAGE ACTIVATED! 🎮";
+      if (bubble) bubble.textContent = "BONUS STAGE ACTIVATED!";
     });
   }
 
@@ -1340,11 +1340,11 @@ function initTypewriter() {
   if (!textEl) return;
 
   const roles = [
-    'AI & Machine Learning Engineer ✦',
-    'Professional Voice Talent & Narrator 🎙️',
-    'Student of The Year (2024 & 2025) 🌟',
-    'Creative Technologist & Builder 💻',
-    'S1 Informatika • Telkom University 🎓'
+    'AI & Machine Learning Engineer',
+    'Professional Voice Talent & Narrator',
+    'Student of The Year (2024 & 2025)',
+    'Creative Technologist & Builder',
+    'S1 Informatika • Telkom University'
   ];
 
   let roleIdx = 0;
