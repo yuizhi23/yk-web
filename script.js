@@ -6,7 +6,7 @@
  * 3. Interactive Floating Sticker Palette & Stamp Mode (Click to stamp emojis + Clear)
  * 4. Simulated Retro Phone Call Modal & Camera Shutter Flash
  * 5. Interactive Fortune & Quote Dispenser Widget
- * 6. All 30 Certificates Manager: Live Real-Time Search, Category Filters, Grid & Carousel Views
+ * 6. All 32 Certificates Manager: Live Real-Time Search, Category Filters, Grid & Carousel Views
  * 7. Sparkle Cursor Trail Effect
  * 8. Fullscreen Resume Modal & High-Res Lightbox
  */
@@ -596,7 +596,7 @@ function initFortuneBox() {
 }
 
 /* ==========================================================================
-   7. ALL 30 CERTIFICATES MANAGER (SEARCH, CATEGORY FILTERS & VIEW MODES)
+   7. ALL 32 CERTIFICATES MANAGER (SEARCH, CATEGORY FILTERS & VIEW MODES)
    ========================================================================== */
 function initCertificatesManager() {
   const track = document.getElementById('certScrollTrack');
@@ -750,7 +750,7 @@ function initConsoleSearch() {
       if (resumeModal) resumeModal.classList.add('active');
       spawnConfetti(window.innerWidth / 2, window.innerHeight * 0.35, 26, ['📄', '✨', '🎓', '⭐']);
     } else if (val.includes('cert') || val.includes('sertif')) {
-      reply = "All 30 verified certifications are listed below in credentials! ⚙️";
+      reply = "All 32 verified certifications are listed below in credentials! ⚙️";
       document.getElementById('certificates')?.scrollIntoView({ behavior: 'smooth' });
     } else if (val.includes('about') || val.includes('yuki') || val.includes('bio')) {
       reply = "Discovering Yukie's creative & tech journey in About! ✦";

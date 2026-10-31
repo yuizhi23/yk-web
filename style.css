@@ -2428,7 +2428,7 @@ section {
 }
 
 /* ==========================================================================
-   CERTIFICATES (ALL 30 CERTS & SMOOTH NAVIGATION)
+   CERTIFICATES (ALL 32 CERTS & SMOOTH NAVIGATION)
    ========================================================================== */
 .cert-quote-box {
   background: #14141c;
@@ -2443,7 +2443,7 @@ section {
   color: #f1f5f9;
 }
 
-/* ALL 30 CERTIFICATES CONTROLS & LAYOUTS */
+/* ALL 32 CERTIFICATES CONTROLS & LAYOUTS */
 .cert-controls-bar {
   display: flex;
   flex-direction: column;
@@ -2562,7 +2562,7 @@ section {
   width: 100%;
 }
 
-/* GRID MODE: ALL 30 CERTIFICATES SHOWN ON SCREEN */
+/* GRID MODE: ALL 32 CERTIFICATES SHOWN ON SCREEN */
 .cert-scroll-track.grid-mode {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
