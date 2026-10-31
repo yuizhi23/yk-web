@@ -184,13 +184,21 @@ body {
     background-attachment: scroll !important;
   }
 
-  /* Critical Mobile Optimization: disable fixed SVG halftone overlay & heavy marquee to free GPU */
+  /* Mobile Optimization: disable fixed SVG halftone overlay to free GPU */
   .halftone-bg {
     display: none !important;
   }
 
+  /* Keep running background marquee active & hardware-accelerated on mobile */
   .punk-bg-marquee {
-    display: none !important;
+    display: block !important;
+    top: 8px;
+    opacity: 0.15;
+  }
+
+  .punk-bg-marquee .marquee-track {
+    font-size: clamp(2.4rem, 8.5vw, 4rem);
+    will-change: transform;
   }
 
   .chibi-pixel-img {
