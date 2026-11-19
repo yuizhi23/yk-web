@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSidebar();
   initDesignShowcase();
   initContentCreatorReels();
+  initWebShowcaseInteractive();
 });
 
 /* ==========================================================================
@@ -1789,6 +1790,75 @@ function initContentCreatorReels() {
       allReelVideos.forEach(v => pauseVideo(v));
     } else {
       unlockMediaOnce();
+    }
+  });
+}
+
+/* ==========================================================================
+   20. FEATURED WEB SHOWCASE: ANIMATED AUTO-SCROLL & LIVE IFRAME SIMULATOR
+   ========================================================================== */
+function initWebShowcaseInteractive() {
+  const cards = document.querySelectorAll('.web-browser-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    const liveBtn = card.querySelector('.web-btn-simulator');
+    const viewport = card.querySelector('.web-browser-viewport');
+    const liveIndicator = card.querySelector('.web-live-indicator');
+    const url = card.getAttribute('data-live-url');
+
+    // 1. Mobile touch / click toggle to trigger smooth scroll animation
+    if (viewport) {
+      viewport.addEventListener('click', (e) => {
+        // If clicking overlay zoom button or inside simulator, let those handle it
+        if (e.target.closest('.web-viewport-overlay') || card.classList.contains('simulator-active')) return;
+        card.classList.toggle('is-scrolling');
+      });
+    }
+
+    // 2. Interactive Live Iframe Simulator Toggle
+    if (liveBtn && viewport && url) {
+      liveBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isActive = card.classList.contains('simulator-active');
+
+        if (isActive) {
+          // Close Simulator
+          const iframe = viewport.querySelector('.web-live-iframe');
+          if (iframe) iframe.remove();
+          card.classList.remove('simulator-active');
+          liveBtn.innerHTML = '<span>⚡ Coba Web Langsung di Sini</span>';
+          if (liveIndicator) liveIndicator.textContent = 'LIVE';
+          if (typeof sfxClick === 'function') sfxClick();
+        } else {
+          // Open Simulator (Load real interactive website right in frame)
+          // Close any other open simulators first to preserve device resources
+          document.querySelectorAll('.web-browser-card.simulator-active').forEach(other => {
+            const otherIframe = other.querySelector('.web-live-iframe');
+            if (otherIframe) otherIframe.remove();
+            other.classList.remove('simulator-active');
+            const otherBtn = other.querySelector('.web-btn-simulator');
+            if (otherBtn) otherBtn.innerHTML = '<span>⚡ Coba Web Langsung di Sini</span>';
+            const otherInd = other.querySelector('.web-live-indicator');
+            if (otherInd) otherInd.textContent = 'LIVE';
+          });
+
+          const iframe = document.createElement('iframe');
+          iframe.src = url;
+          iframe.className = 'web-live-iframe';
+          iframe.title = 'Interactive Web Simulator';
+          iframe.setAttribute('loading', 'lazy');
+          iframe.setAttribute('allow', 'autoplay; fullscreen; encrypted-media');
+          viewport.appendChild(iframe);
+
+          card.classList.add('simulator-active');
+          liveBtn.innerHTML = '<span>✕ Tutup Simulator Live</span>';
+          if (liveIndicator) liveIndicator.textContent = 'PLAYING';
+          if (typeof sfxPop === 'function') sfxPop();
+        }
+      });
     }
   });
 }

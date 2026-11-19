@@ -6048,37 +6048,153 @@ footer {
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: #000;
+  background: #08070d;
   cursor: pointer;
 }
 
 .web-preview-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   display: block;
-  transition: transform 0.35s ease, filter 0.3s ease;
+  object-fit: initial;
+  object-position: top center;
+  transform: translateY(0);
+  transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
-.web-browser-card:hover .web-preview-img {
-  transform: scale(1.04);
+/* Hover or is-scrolling: smoothly pan from top to bottom of website! */
+.web-browser-card:hover .web-preview-img,
+.web-browser-card.is-scrolling .web-preview-img {
+  transform: translateY(calc(-100% + 225px));
+  transition: transform 7.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .web-viewport-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.35);
   opacity: 0;
   transition: opacity 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  z-index: 4;
 }
 
 .web-browser-card:hover .web-viewport-overlay {
   opacity: 1;
+}
+
+/* Moving Scan Indicator Pill */
+.web-scroll-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.45);
+  border-radius: 20px;
+  padding: 3px 9px;
+  font-family: var(--font-pixel, monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.web-scroll-dot {
+  width: 6px;
+  height: 6px;
+  background: #facc15;
+  border-radius: 50%;
+  animation: scrollPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Live Iframe Simulator inside the Browser Frame */
+.web-live-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #ffffff;
+  z-index: 6;
+}
+
+.web-browser-card.simulator-active .web-viewport-overlay,
+.web-browser-card.simulator-active .web-corner-badge,
+.web-browser-card.simulator-active .web-scroll-badge {
+  display: none !important;
+}
+
+.web-browser-card.simulator-active .web-browser-header {
+  background: #2e1065 !important;
+  border-bottom: 2.5px solid #a855f7 !important;
+}
+
+.web-browser-card.simulator-active .web-live-indicator {
+  background: rgba(168, 85, 247, 0.25) !important;
+  color: #d8b4fe !important;
+  border-color: #a855f7 !important;
+}
+
+.web-browser-card.simulator-active .web-live-indicator::before {
+  background: #c084fc !important;
+  box-shadow: 0 0 8px #c084fc !important;
+}
+
+.web-btn-simulator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 800;
+  background: #231238;
+  color: #e9d5ff;
+  border: 1.5px solid #a855f7;
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-top: 0.65rem;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.web-btn-simulator:hover,
+.web-browser-card.simulator-active .web-btn-simulator {
+  background: #a855f7;
+  color: #000000;
+  box-shadow: 3px 3px 0px #000000;
+  transform: translate(-1px, -1px);
+}
+
+.web-browser-card.simulator-active .web-btn-simulator {
+  background: #e11d48;
+  color: #ffffff;
+  border-color: #f43f5e;
+}
+
+.web-browser-card.simulator-active .web-btn-simulator:hover {
+  background: #f43f5e;
+  color: #ffffff;
 }
 
 .web-overlay-pill {
