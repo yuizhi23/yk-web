@@ -204,6 +204,30 @@ body {
   .chibi-pixel-img {
     filter: none !important;
   }
+
+  /* GPU & Scrolling Booster: content-visibility allows offscreen sections to skip rendering */
+  #certificates,
+  #gallery,
+  #education,
+  #skills,
+  #projects,
+  #designs {
+    content-visibility: auto;
+    contain-intrinsic-size: 700px;
+  }
+
+  /* Disable sticky hover on touch screens — only scroll on intentional tap */
+  .web-preview-img {
+    transition: transform 3.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  }
+
+  .web-browser-card:hover .web-preview-img {
+    transform: translateY(0);
+  }
+
+  .web-browser-card.is-scrolling .web-preview-img {
+    transform: translateY(calc(-100% + 215px)) !important;
+  }
 }
 
 /* Respect reduced-motion OS preference */

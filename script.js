@@ -1319,7 +1319,16 @@ function initScrollEffects() {
     }
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  let scrollTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(() => {
+        onScroll();
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  }, { passive: true });
   onScroll();
 
   if (bttBtn) {
