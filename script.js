@@ -1838,7 +1838,7 @@ function initWebShowcaseInteractive() {
           const iframe = viewport.querySelector('.web-live-iframe');
           if (iframe) iframe.remove();
           card.classList.remove('simulator-active');
-          liveBtn.innerHTML = '<span>⚡ Coba Web Langsung di Sini</span>';
+          liveBtn.innerHTML = '<span>⚡ Try Live Simulator</span>';
           if (liveIndicator) liveIndicator.textContent = 'LIVE';
           if (typeof sfxClick === 'function') sfxClick();
         } else {
@@ -1849,7 +1849,7 @@ function initWebShowcaseInteractive() {
             if (otherIframe) otherIframe.remove();
             other.classList.remove('simulator-active');
             const otherBtn = other.querySelector('.web-btn-simulator');
-            if (otherBtn) otherBtn.innerHTML = '<span>⚡ Coba Web Langsung di Sini</span>';
+            if (otherBtn) otherBtn.innerHTML = '<span>⚡ Try Live Simulator</span>';
             const otherInd = other.querySelector('.web-live-indicator');
             if (otherInd) otherInd.textContent = 'LIVE';
           });
@@ -1863,7 +1863,7 @@ function initWebShowcaseInteractive() {
           viewport.appendChild(iframe);
 
           card.classList.add('simulator-active');
-          liveBtn.innerHTML = '<span>✕ Tutup Simulator Live</span>';
+          liveBtn.innerHTML = '<span>✕ Close Live Simulator</span>';
           if (liveIndicator) liveIndicator.textContent = 'PLAYING';
           if (typeof sfxPop === 'function') sfxPop();
         }
